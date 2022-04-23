@@ -1,0 +1,37 @@
+h1,h2,h3,h4,h5,h6,p{ /* all text */
+    --font-offset: 0.25rem;
+    margin:0;
+}
+
+h1,h2,h3,h4,h5,h6{ /* for all titles */
+    font-family: "Plus Jakarta Sans", "Montserrat", Verdana, Geneva, Tahoma, sans-serif;
+    line-height: 110%;
+    color: #202020;
+}
+
+h1{
+    font-size: calc(3rem + var(--font-offset));
+}
+h2{
+    font-size: calc(2.5rem + var(--font-offset));
+}
+h3{
+    font-size: calc(2rem + var(--font-offset));
+}
+h4{
+    font-size: calc(1.6rem + var(--font-offset));
+}
+h5{
+    font-size: calc(1.3rem + var(--font-offset));
+}
+h6{
+    font-size: calc(1rem + var(--font-offset));
+}
+
+p{    
+    font-family: "Montserrat", 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-size: calc(1rem + var(--font-offset));
+    color: #3b3b3b;
+} .monospaced{
+    font-family: "Fira Code", monospace;
+}

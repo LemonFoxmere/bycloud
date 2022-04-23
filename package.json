@@ -1,0 +1,32 @@
+{
+  "name": "bycloud",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/LemonOrangeWasTaken/ByCloud.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/LemonOrangeWasTaken/ByCloud/issues"
+  },
+  "homepage": "https://github.com/LemonOrangeWasTaken/ByCloud#readme",
+  "dependencies": {
+    "@types/animejs": "^3.1.4",
+    "path": "^0.12.7",
+    "speed-measure-webpack-plugin": "^1.5.0",
+    "ts-loader": "^9.2.8",
+    "webpack": "^5.72.0",
+    "webpack-merge": "^5.8.0"
+  },
+  "scripts": {
+    "build": "webpack --config webpack.prod.js",
+    "start": "webpack serve --open --config webpack.dev.js"
+  },
+  "devDependencies": {
+    "webpack-cli": "^4.9.2"
+  }
+}
