@@ -1,0 +1,129 @@
+h1{
+    font-size: 4.2rem;
+    margin:0;
+    font-family: Fira Code, monospace;
+    color:#e3e3e3;
+}
+h2{
+    font-size: 3.2rem;
+    margin:0;
+    font-family: Fira Code, monospace;
+    color:#e3e3e3;
+}
+h3{
+    font-size: 2.2rem;
+    margin:0;
+    font-family: Fira Code, monospace;
+    color:#e3e3e3;
+}
+h4{
+    font-size: 1.7rem;
+    margin:0;
+    font-family: Fira Code, monospace;
+    color:#e3e3e3;
+}
+h5{
+    font-size: 1.4rem;
+    margin:0;
+    font-family: Fira Code, monospace;
+    color:#e3e3e3;
+}
+h6{
+    font-size: 1.2rem;
+    margin:0;
+    font-family: Fira Code, monospace;
+}
+p{
+    font-size: 1.2rem;
+    margin: 0.1rem 0 0 0;
+    font-family: Plus Jakarta Sans;
+    color:#e3e3e3;
+}
+a{
+    color:#ff6f00;
+    font-weight: 700;
+    text-decoration: none;
+}@media(hover:hover){ a:hover{
+    text-decoration: underline;
+}}
+
+/* title text */
+#title-text::after{
+    content: "...";
+}
+/* copyright */
+#copyright{
+    font-size: 1rem;
+    position: fixed;
+    bottom:0.5rem;
+    opacity: 0.3;
+}
+
+/* buttons */
+.style-btn{
+    text-decoration: none;
+    
+    border: 1px solid #e3e3e3;
+    padding: 0.5rem 1rem 0.5rem 1rem;
+    width: fit-content;
+    border-radius: 100rem;
+    cursor: pointer;
+
+    transition: all 230ms cubic-bezier(0.260, 0.050, 0.250, 1.000);
+}.style-btn > h6{
+    background: linear-gradient(-33deg, #1476ff 0%, #f422ff 70%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    filter: contrast(0) brightness(10);
+
+    transition: filter 150ms ease-in-out; /* custom */;
+}
+
+@media (hover: hover) { .style-btn:hover{
+    color:#f2f2f2;
+    background-color: #e3e3e3;
+    text-decoration: none;
+} .style-btn:hover > h6{
+    filter: contrast(1) brightness(1);
+}}
+
+.bg-deco{
+    opacity: 0.2;
+    z-index: -1;
+    width: 55rem;
+}
+
+/* =========================== MOBILE ONLY =========================== */
+@media screen and (max-width: 900px) {
+    body{
+        text-align: center;
+    }
+    #text-container{
+        justify-content: center;
+        align-items: center;
+    }
+
+    /* title text */
+    #title-text::after{
+        content: "";
+    }
+
+    h1{
+        font-size: 3.7rem;
+    }
+    h3{
+        font-size: 1.7rem;
+        margin-top: 0.5rem;
+    }
+    h6{
+        font-size: 1rem;
+    }
+    p{
+        font-size: 1rem;
+        margin-top: 0.5rem;
+    }
+
+    .bg-deco{
+        width: 40rem;
+    }
+}
