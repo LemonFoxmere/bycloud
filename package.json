@@ -27,6 +27,7 @@
     "start": "webpack serve --open --config webpack.dev.js"
   },
   "devDependencies": {
-    "webpack-cli": "^4.9.2"
+    "webpack-cli": "^4.9.2",
+    "webpack-dev-server": "^4.8.1"
   }
 }

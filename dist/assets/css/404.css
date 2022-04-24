@@ -76,7 +76,7 @@ a{
     -webkit-text-fill-color: transparent;
     filter: contrast(0) brightness(10);
 
-    transition: filter 150ms ease-in-out; /* custom */;
+    transition: filter 100ms ease-in-out; /* custom */;
 }
 
 @media (hover: hover) { .style-btn:hover{
@@ -90,7 +90,7 @@ a{
 .bg-deco{
     opacity: 0.2;
     z-index: -1;
-    width: 55rem;
+    width: max(50rem, 60vw);
 }
 
 /* =========================== MOBILE ONLY =========================== */

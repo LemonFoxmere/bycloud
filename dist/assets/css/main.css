@@ -7,10 +7,17 @@
     -ms-user-select: none;
     user-select: none;
 }
+.no-mobile-display{
+    display: none !important;
+}.no-mobile-view{
+    opacity: 0 !important;
+}
 
 /* This is just for page & generic styling */
 body{
+    width: 100vw; height: 100vh;
     margin:0; padding:0;
+    background-color: #0d0f12;
 
     display: flex;
     justify-content: center;
@@ -18,8 +25,7 @@ body{
     flex-direction: column;
 
     scroll-behavior: smooth;
-    overflow-x: hidden !important;
-    overscroll-behavior-x: none;
+    overflow: hidden
 }
 
 hr{
@@ -29,13 +35,58 @@ hr{
     border:none;
 }
 
+#main-bg{
+    position: fixed;
+    width: clamp(90rem, 110%, 150rem);
+    height: auto;
+
+    /* transform: translateX(12rem) */
+}
+
+#title-container {
+    background-color: #0000007f;
+}
+
+#title-text-container h1{
+    text-align: center;
+} #title-text-container h3{
+    text-align: center;
+}
+
 /* ====================== MEDIUM ====================== */
 @media screen and (min-width: 900px) {
+    .no-mobile-display{
+        display: inline-block !important;
+    }
+    .no-mobile-view{
+        opacity: 1 !important;
+    }
+
+    /* special view classes */
+    
     body{
-        background-color: #e0e0e0;
+    }
+
+    #main-bg{
+        transform: none
+    }    
+
+    #title-container {
+        background-color: transparent;
+    }
+
+    #title-text-container{
+        padding-right: 15%;
+    } #title-text-container h1{
+        text-align: right;
+    } #title-text-container h3{
+        text-align: right;
     }
 }
 
 /* ====================== LARGE ====================== */
 @media screen and (min-width: 1300px) {
+    #title-text-container{
+        padding-right: 23%;
+    }
 }

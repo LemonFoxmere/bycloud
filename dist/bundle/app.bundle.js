@@ -1,12 +1,2 @@
-/******/ (() => { // webpackBootstrap
-/******/ 	"use strict";
-var __webpack_exports__ = {};
-/*!********************!*\
-  !*** ./src/app.ts ***!
-  \********************/
-
-console.log("loaded");
-
-/******/ })()
-;
+(()=>{"use strict";window.onload=()=>{document.getElementById("title-container").style.height=`${document.getElementById("main-bg").getBoundingClientRect().height}px`,document.getElementById("title-container").style.width=`${document.getElementById("main-bg").getBoundingClientRect().width>window.innerWidth?window.innerWidth:document.getElementById("main-bg").getBoundingClientRect().width}px`,document.getElementById("title-container").style.marginTop=`${document.getElementById("main-bg").getBoundingClientRect().y}px`,document.getElementById("title-container").style.marginLeft=`${document.getElementById("main-bg").getBoundingClientRect().width>window.innerWidth?0:document.getElementById("main-bg").getBoundingClientRect().x}px`,window.onresize=()=>{document.getElementById("title-container").style.height=`${document.getElementById("main-bg").getBoundingClientRect().height}px`,document.getElementById("title-container").style.width=`${document.getElementById("main-bg").getBoundingClientRect().width>window.innerWidth?window.innerWidth:document.getElementById("main-bg").getBoundingClientRect().width}px`,document.getElementById("title-container").style.marginTop=`${document.getElementById("main-bg").getBoundingClientRect().y}px`,document.getElementById("title-container").style.marginLeft=`${document.getElementById("main-bg").getBoundingClientRect().width>window.innerWidth?0:document.getElementById("main-bg").getBoundingClientRect().x}px`}}})();
 //# sourceMappingURL=app.bundle.js.map
