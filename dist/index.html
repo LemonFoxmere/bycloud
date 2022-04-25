@@ -21,7 +21,7 @@
 <body>
 
     <!-- background image -->
-    <img class="unselectable" src="./assets/img/ras/header.png" alt="background" id="main-bg" draggable="false" ondragstart="return false;"/>
+    <img id="main-bg" class="unselectable" src="./assets/img/ras/header.png" alt="background" draggable="false" ondragstart="return false;"/>
     <!-- background vignette -->
     <section class="no-mobile-view" style="position:fixed; width: min(100%, 150rem); display:flex; justify-content: space-between;">
         <div style="width:min(20rem, 15%); height:100vh; background: linear-gradient(90deg, #0d0f12 20%, #0d0f1200 100%);"></div>
@@ -29,17 +29,17 @@
     </section>
 
     <!-- main page -->
-    <section style="position:fixed; width: 100vw; height: 100vh; overflow: auto; overflow-x: hidden;">
+    <section id="main-page" style="position:fixed; width: 100vw; height: 100vh; overflow: auto; overflow-x: hidden;">
         <!-- title & background glo -->
         <section id="title-container" style="width: 100%; overflow: none; position:relative; overflow: hidden; display:flex; justify-content: center; align-items: flex-end; flex-direction: column;">
             <!-- glo 1 -->
-            <div class="no-mobile-view unselectable" style="position:absolute; bottom:0; right: 25%; width: 14rem; height:3rem; background-color: #b91ad8; filter: blur(50px)" ondragstart="return false" draggable="false"></div>
+            <div id="glo1" class="no-mobile-display unselectable" style="position:absolute; bottom:0; right: 25%; width: 14rem; height:3rem; background-color: #b91ad8; filter: blur(50px); opacity: 0" ondragstart="return false" draggable="false"></div>
             <!-- glo 2 -->
-            <div class="no-mobile-view unselectable" style="position:absolute; top:0; left: 17%; width: 70%; height:2rem; background-color: #84a4ff; filter: blur(50px)" ondragstart="return false" draggable="false"></div>
+            <div id="glo2" class="no-mobile-display unselectable" style="position:absolute; top:0; left: 17%; width: 70%; height:2rem; background-color: #84a4ff; filter: blur(50px); opacity: 0" ondragstart="return false" draggable="false"></div>
 
             <!-- text -->
             <section id="title-text-container" style="width: 100vw; z-index: 5">
-                <h1 class="title" style="width: 100%; line-height: 130%; letter-spacing: 3pt">BYCLOUD</h1>
+                <h1 class="title" style="width: 100%; line-height: 130%; letter-spacing: 3pt; text-shadow: 0 0 1rem #ffffffb9;">BYCLOUD</h1>
                 <h3 style="width: 100%; text-shadow: 0 0 1rem #13011df5; font-weight: 400; line-height: 110%;">Hands on with <span style="white-space: nowrap;">the latest AI tech</span></h3>
             </section>
         </section>

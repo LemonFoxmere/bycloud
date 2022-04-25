@@ -40,6 +40,8 @@ hr{
     width: clamp(90rem, 110%, 150rem);
     height: auto;
 
+    opacity: 0
+
     /* transform: translateX(12rem) */
 }
 

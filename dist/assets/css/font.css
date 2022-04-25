@@ -30,7 +30,6 @@ h6{
 
 .title{
     font-size: calc(3.5rem + var(--font-offset));
-    text-shadow: 0 0 1rem #13011df5;
     font-family: "Nova Square";
 }
 
