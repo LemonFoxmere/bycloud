@@ -1,75 +1,93 @@
 import anime from "animejs";
+import {
+    update_title_container,
+    update_bg_container,
+    set_flicker,
+    fadein_background,
+    add_element_parallax,
+    update_parallax,
+} from "./ui-init";
+import {
+    add_trigger_listener,
+    update_trigger_listener,
+    trigger_element
+} from "./trig-handler";
 
 export type callbacks = (content?: any) => any;
 
-// initialize all UI
-const update_title_container = ():void => { // for updating the front page title container
-    document.getElementById("title-container")!.style.height = `${document.getElementById("main-bg")!.getBoundingClientRect().height}px`;
-    document.getElementById("title-container")!.style.width = `${document.getElementById("main-bg")!.getBoundingClientRect().width > window.innerWidth ? window.innerWidth : document.getElementById("main-bg")!.getBoundingClientRect().width}px`;
-    document.getElementById("title-container")!.style.marginTop = `${document.getElementById("main-bg")!.getBoundingClientRect().y}px`;
-    document.getElementById("title-container")!.style.marginLeft = `${document.getElementById("main-bg")!.getBoundingClientRect().width > window.innerWidth ? 0 : document.getElementById("main-bg")!.getBoundingClientRect().x}px`;
-}
-
-const set_flicker = async (id:string, twice:boolean, color:string, init_blink:number, time:number = 5000, deviation:number = 3000,) => {
-    const flicker = (id:string, twice:boolean, color:string) => {
-        document.getElementById(id)!.style.backgroundColor = "transparent";
-        setTimeout(() => {
-            document.getElementById(id)!.style.backgroundColor = color;
-        }, Math.random() * 200 + 200);
-
-        // if blink twice, wait some time before next blink
-        if(twice){
-            setTimeout(() => {
-                console.log("123");
-                document.getElementById(id)!.style.backgroundColor = "transparent";
-                setTimeout(() => {
-                    document.getElementById(id)!.style.backgroundColor = color;
-                }, Math.random() * 200 + 200);
-            }, Math.random() * 300 + 200)
-        }
-    }
-
-    setTimeout(() => flicker(id, twice, color), init_blink)
-
-    while (true){
-        await new Promise((res:callbacks) => {
-            setTimeout(() => {
-                flicker(id, twice, color);
-                res();
-            }, Math.random() * deviation + time);
-        })
-    }
-}
-
-const fadein_background = ():Promise<void> => {
-    return new Promise((res:callbacks) => {
-        anime({
-            targets: "#main-bg, #glo1, #glo2",
-            opacity: [0,1],
-            duration: 2000,
-            easing: "easeInOutQuart",
-            delay: 300,
-            complete: ():void => {
-                // end promise when animation is complete
-                res();
-            }
-        })
-    })
-}
-
-const init_ui = async () => {
+const init_ui = async () => {    
     // init size of title
+    update_bg_container();
     update_title_container();
+    
+    // add window scroll events
+    add_element_parallax("bg-container", 0.4);
+    add_element_parallax("main-bg", 0.4);
+    add_element_parallax("glo2", -0.02, "-2rem");
+    add_element_parallax("glo1", -0.1);
+
+    // add triggers
+    add_trigger_listener("trig-1", "trig-alpha", [
+        { // show titles
+            scroll_past:():void => {
+                document.getElementById("about-content")!.classList.remove("disable-hidden");
+                document.getElementById("title-text-container")!.classList.add("disable-hidden");
+            },
+            scroll_back: ():void => {
+                document.getElementById("about-content")!.classList.add("disable-hidden");
+                document.getElementById("title-text-container")!.classList.remove("disable-hidden");
+            }
+        },
+    ])
+    add_trigger_listener("trig-2", "trig-alpha", [ // reveals the page subtitle
+        { // show titles
+            scroll_past:():void => {
+                document.getElementById("page-subtitle")!.classList.remove("disable-hidden");
+            },
+            scroll_back: ():void => {}
+        },
+    ])
+    add_trigger_listener("trig-2", "trig-beta", [ // reveals the page subtitle
+        { // show titles
+            scroll_past:():void => {
+                document.getElementById("title-theory")!.style.color = "#363636";
+                document.getElementById("title-reality")!.style.color = "#f3f3f3";
+            },
+            scroll_back: ():void => {
+                document.getElementById("title-theory")!.style.color = "#f3f3f3";
+                document.getElementById("title-reality")!.style.color = "#363636";
+            }
+        },
+    ])
+
     await fadein_background();
     set_flicker("glo1", true, "#b91ad8", Math.random() * 700 + 500);
     set_flicker("glo2", true, "#84a4ff", Math.random() * 700 + 200, 3000, 6000)
+
 }
 
 window.onload = ():void => {
+    // set scroll animations
     init_ui();
+    update_parallax();
+    update_trigger_listener();
+
+    document.getElementById("main-page")!.onscroll = (evt):void => {
+        update_parallax();
+
+        // update trigger listeners
+        update_trigger_listener();
+
+        // request frame update
+        requestAnimationFrame(() => {});
+    }
 
     // update dimension for title section
     window.onresize = ():void => {
+        update_bg_container();
         update_title_container();
+
+        // request frame update
+        requestAnimationFrame(() => {});
     }
 }

@@ -7,10 +7,36 @@
     -ms-user-select: none;
     user-select: none;
 }
+.disable-hidden{
+    opacity: 0 !important;
+    pointer-events: none !important;
+}
+
 .no-mobile-display{
     display: none !important;
 }.no-mobile-view{
     opacity: 0 !important;
+}
+.only-mobile-display{
+    display: inline !important;
+}.only-mobile-view{
+    opacity:1 !important;
+}
+
+/* trigger configuration */
+.trigger{
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+
+    position: absolute;
+    z-index: 9999 !important;
+    right:5rem;
+    
+    visibility: hidden;
 }
 
 /* This is just for page & generic styling */
@@ -25,7 +51,7 @@ body{
     flex-direction: column;
 
     scroll-behavior: smooth;
-    overflow: hidden
+    overflow: hidden;
 }
 
 hr{
@@ -37,19 +63,19 @@ hr{
 
 #main-bg{
     position: fixed;
-    width: clamp(90rem, 110%, 150rem);
+    width: clamp(110rem, 150%, 150rem);
     height: auto;
 
-    opacity: 0
+    opacity: 0;
 
-    /* transform: translateX(12rem) */
+    filter: brightness(0.5);
+
+    margin-left: 25rem;
 }
 
-#title-container {
-    background-color: #0000007f;
-}
-
-#title-text-container h1{
+#title-text-container{
+    width: 90%;
+} #title-text-container h1{
     text-align: center;
 } #title-text-container h3{
     text-align: center;
@@ -59,9 +85,13 @@ hr{
 @media screen and (min-width: 900px) {
     .no-mobile-display{
         display: inline-block !important;
-    }
-    .no-mobile-view{
+    }.no-mobile-view{
         opacity: 1 !important;
+    }
+    .only-mobile-display{
+        display: none !important;
+    }.only-mobile-view{
+        opacity:0 !important;
     }
 
     /* special view classes */
@@ -70,7 +100,9 @@ hr{
     }
 
     #main-bg{
-        transform: none
+        transform: none;
+        filter: brightness(1);
+        margin-left: 0;
     }    
 
     #title-container {
@@ -78,7 +110,7 @@ hr{
     }
 
     #title-text-container{
-        padding-right: 15%;
+        padding-right: 10%;
     } #title-text-container h1{
         text-align: right;
     } #title-text-container h3{
@@ -88,7 +120,4 @@ hr{
 
 /* ====================== LARGE ====================== */
 @media screen and (min-width: 1300px) {
-    #title-text-container{
-        padding-right: 23%;
-    }
 }

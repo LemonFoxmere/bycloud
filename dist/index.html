@@ -9,6 +9,7 @@
 
     <link rel="stylesheet" href="./assets/css/main.css">
     <link rel="stylesheet" href="./assets/css/font.css">
+    <link rel="stylesheet" href="./assets/css/transitions.css">
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin> 
@@ -20,8 +21,23 @@
 </head>
 <body>
 
+    <div style="position:fixed; top:0; left:0; width:100vw; height:100vh; margin:0; z-index: 9999; pointer-events: none;">
+        <!-- main triggers -->
+        <a class="trigger" id="trig-delta" style="color:red; top:5%; position:fixed; right:0">      ------- Delta</a>
+        <a class="trigger" id="trig-epsilon" style="color:darkcyan; top:20%; position:fixed; right:0">   ----- Epsilon</a>
+        <a class="trigger" id="trig-beta" style="color:green; top:30%; position:fixed; right:0">     -------- Beta</a>
+        <a class="trigger" id="trig-alpha" style="color:blue; top:50%; position:fixed; right:0">     ------- Alpha</a>
+        <!-- logo -->
+    </div>
+
     <!-- background image -->
     <img id="main-bg" class="unselectable" src="./assets/img/ras/header.png" alt="background" draggable="false" ondragstart="return false;"/>
+    <section id="bg-container" style="position:fixed; display:flex; flex-direction: column; justify-content: space-between; overflow:hidden; transform: translateY(0);">
+        <!-- glo top -->
+        <div id="glo2" class="no-mobile-display unselectable" style="margin-left: 7%; width: 70%; transform: translateY(-2rem); height:4rem; background-color: #84a4ff; opacity: 0; filter:blur(50px)" ondragstart="return false" draggable="false"></div>
+        <!-- glo bottom -->
+        <div id="glo1" class="no-mobile-display unselectable" style="margin-left: 45%; width: 14rem; height:3rem; background-color: #b91ad8; opacity: 0; filter:blur(50px)" ondragstart="return false" draggable="false"></div>
+    </section>
     <!-- background vignette -->
     <section class="no-mobile-view" style="position:fixed; width: min(100%, 150rem); display:flex; justify-content: space-between;">
         <div style="width:min(20rem, 15%); height:100vh; background: linear-gradient(90deg, #0d0f12 20%, #0d0f1200 100%);"></div>
@@ -30,17 +46,48 @@
 
     <!-- main page -->
     <section id="main-page" style="position:fixed; width: 100vw; height: 100vh; overflow: auto; overflow-x: hidden;">
-        <!-- title & background glo -->
-        <section id="title-container" style="width: 100%; overflow: none; position:relative; overflow: hidden; display:flex; justify-content: center; align-items: flex-end; flex-direction: column;">
-            <!-- glo 1 -->
-            <div id="glo1" class="no-mobile-display unselectable" style="position:absolute; bottom:0; right: 25%; width: 14rem; height:3rem; background-color: #b91ad8; filter: blur(50px); opacity: 0" ondragstart="return false" draggable="false"></div>
-            <!-- glo 2 -->
-            <div id="glo2" class="no-mobile-display unselectable" style="position:absolute; top:0; left: 17%; width: 70%; height:2rem; background-color: #84a4ff; filter: blur(50px); opacity: 0" ondragstart="return false" draggable="false"></div>
+        <!-- spacer for title -->
+        <div id="title-spacer" style="width: 100%; background-color: transparent;"></div>
 
+        <!-- title & background glo -->
+        <section id="title-container" style="overflow: none; position:relative; overflow: hidden; display:flex; justify-content: center; align-items: center; flex-direction: column;">
             <!-- text -->
-            <section id="title-text-container" style="width: 100vw; z-index: 5">
+            <section id="title-text-container" class="trans-400" style="z-index: 5;">
                 <h1 class="title" style="width: 100%; line-height: 130%; letter-spacing: 3pt; text-shadow: 0 0 1rem #ffffffb9;">BYCLOUD</h1>
                 <h3 style="width: 100%; text-shadow: 0 0 1rem #13011df5; font-weight: 400; line-height: 110%;">Hands on with <span style="white-space: nowrap;">the latest AI tech</span></h3>
+            </section>
+        </section>
+
+        <!-- content -->
+        <section style="width: 100%; height:fit-content; background-color: transparent; position:relative">
+            <a class="trigger" id="trig-1" style="top:5rem; color:white">Trigger 1 -----</a>
+            
+            <!-- balcony image of cats to blend in -->
+            <img src="./assets/img/ras/balcony.png" class="no-mobile-display" style="width:100%; height:auto; transform: translateY(1rem);" alt="cats & grass">
+            <img src="./assets/img/vec/sep.svg" class="only-mobile-display" style="width: max(50rem, 100%); height:auto; transform: translateY(1rem);" alt="cats & grass">
+            
+            <section id="about-content" class="disable-hidden trans-500" style="width: 100%; height:100rem; background-color: #0d0f12; padding-top: 7rem; display: flex; align-items: center; flex-direction: column;">
+                <a class="trigger" id="trig-2" style="position:relative; color:white">Trigger 2 -----</a>
+                
+                <h1 id="page-title" style="width: 80%; text-align:center">
+                    Explore the <span style="white-space: nowrap; 
+                    background-color:#da99ff; background-image:
+                    radial-gradient(at 87% 44%, hsla(223,70%,78%,1) 0px, transparent 50%),
+                    radial-gradient(at 76% 71%, hsla(260,97%,61%,1) 0px, transparent 50%),
+                    radial-gradient(at 90% 10%, hsla(338,78%,60%,1) 0px, transparent 50%),
+                    radial-gradient(at 32% 68%, hsla(357,99%,79%,1) 0px, transparent 50%),
+                    radial-gradient(at 62% 29%, hsla(284,73%,79%,1) 0px, transparent 50%),
+                    radial-gradient(at 35% 23%, hsla(195,91%,76%,1) 0px, transparent 50%),
+                    radial-gradient(at 71% 80%, hsla(315,99%,69%,1) 0px, transparent 50%);
+                    -webkit-background-clip: text;
+                    -webkit-text-fill-color: transparent;
+                    font-weight: 900;
+                    line-height: 120%;
+                    ">AI Frontier</span>
+                </h1>
+                <h3 id="page-subtitle" class="disable-hidden trans-400" style="color: #898989; width: min(70rem, 80%); margin-top: 2rem; text-align: center; font-weight: 400;">
+                    From <span id="title-theory" class="trans-300" style="color:#f3f3f3; font-weight: 800">theory</span> <span style="white-space: nowrap;">to <span id="title-reality" class="trans-300" style="color:#363636; font-weight: 800">reality</span></span>
+                </h3>
             </section>
         </section>
     </section>

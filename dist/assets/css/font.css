@@ -33,6 +33,12 @@ h6{
     font-family: "Nova Square";
 }
 
+#page-title{
+    font-size:3.5rem
+} #page-subtitle{
+    font-size:1.5rem
+} 
+
 p{    
     font-family: "Montserrat", 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     font-size: calc(1rem + var(--font-offset));
@@ -66,6 +72,11 @@ p{
         text-shadow: 0 0 1rem #13011df5;
         font-family: "Nova Square";
     }
+    #page-title{
+        font-size:4rem
+    } #page-subtitle{
+        font-size:2rem
+    }  
 }
 
 /* ====================== MEDIUM ====================== */
@@ -92,5 +103,8 @@ p{
         font-size: calc(5rem + var(--font-offset));
         text-shadow: 0 0 1rem #13011df5;
         font-family: "Nova Square";
+    }
+    #page-title{
+        font-size:5rem
     }
 }
