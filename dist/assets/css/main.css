@@ -39,6 +39,51 @@
     visibility: hidden;
 }
 
+/* videos */
+.video-container{
+    display: flex;
+    width: fit-content; height: fit-content;
+    display: flex;
+    justify-content: center;
+    
+    position:relative;
+    overflow: hidden;
+    border-radius: 2rem;
+} .video-descriptions{
+    position:absolute;
+    width:min(27rem, 90%);
+    height: calc(100% - 2rem);
+    background-color: #484848d2;
+
+    right:0; top:0;
+    
+    backdrop-filter:blur(30px);
+
+    border: 1px solid #464646;
+    box-shadow: 0 0 5rem #000000a9;
+
+    padding: 1rem 2rem 1rem 2rem;
+    display: flex; flex-direction: column;
+    align-items: center;
+}
+@-moz-document url-prefix() {
+    .video-descriptions{
+        background-color: #484848fa;
+    }
+}
+.video-container button{
+    position: absolute;
+    bottom:1.5rem;
+    padding: 0.5rem 2rem 0.5rem 2rem;
+    background-color: #0d86ff;
+    border:none;
+    border-radius: 100rem;
+    cursor:pointer;
+}
+@media(hover: hover) { .video-container button:hover{
+    background-color: #0a74df;
+}}
+
 /* This is just for page & generic styling */
 body{
     width: 100vw; height: 100vh;

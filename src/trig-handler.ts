@@ -10,7 +10,7 @@ export interface trigger_event_map{ // this is for a trigger update
     target_trig_id:string,
     elements:trigger_element[],
     passed:boolean,
-    passed2:boolean
+    passed2:boolean,
 };
 
 let trig_elements:trigger_event_map[] = [];
@@ -21,7 +21,7 @@ export const add_trigger_listener = (trig_id:string, target_trig_id:string, elem
         target_trig_id,
         elements,
         passed,
-        passed2
+        passed2,
     });
 }
 
@@ -60,5 +60,8 @@ export const update_trigger_listener = ():void => {
                 continue;
             } else continue; // if it hasn't passed, do not execute callbacks again
         }
+
+        // request frame update
+        requestAnimationFrame(() => {});
     }
 }

@@ -25,7 +25,7 @@
         <!-- main triggers -->
         <a class="trigger" id="trig-delta" style="color:red; top:5%; position:fixed; right:0">      ------- Delta</a>
         <a class="trigger" id="trig-epsilon" style="color:darkcyan; top:20%; position:fixed; right:0">   ----- Epsilon</a>
-        <a class="trigger" id="trig-beta" style="color:green; top:30%; position:fixed; right:0">     -------- Beta</a>
+        <a class="trigger" id="trig-beta" style="color:green; top:35%; position:fixed; right:0">     -------- Beta</a>
         <a class="trigger" id="trig-alpha" style="color:blue; top:50%; position:fixed; right:0">     ------- Alpha</a>
         <!-- logo -->
     </div>
@@ -66,8 +66,9 @@
             <img src="./assets/img/ras/balcony.png" class="no-mobile-display" style="width:100%; height:auto; transform: translateY(1rem);" alt="cats & grass">
             <img src="./assets/img/vec/sep.svg" class="only-mobile-display" style="width: max(50rem, 100%); height:auto; transform: translateY(1rem);" alt="cats & grass">
             
-            <section id="about-content" class="disable-hidden trans-500" style="width: 100%; height:100rem; background-color: #0d0f12; padding-top: 7rem; display: flex; align-items: center; flex-direction: column;">
-                <a class="trigger" id="trig-2" style="position:relative; color:white">Trigger 2 -----</a>
+            
+            <section id="about-content" class="disable-hidden trans-500" style="width: 100%; height:fit-content; background-color: #0d0f12; padding-top: 7rem; display: flex; align-items: center; flex-direction: column; transition-property: opacity; position:relative">
+                <a class="trigger" id="trig-2" style="position:absolute; top:75%; color:white; height:0">Trigger 2 -----</a>
                 
                 <h1 id="page-title" style="width: 80%; text-align:center">
                     Explore the <span style="white-space: nowrap; 
@@ -85,11 +86,52 @@
                     line-height: 120%;
                     ">AI Frontier</span>
                 </h1>
-                <h3 id="page-subtitle" class="disable-hidden trans-400" style="color: #898989; width: min(70rem, 80%); margin-top: 2rem; text-align: center; font-weight: 400;">
-                    From <span id="title-theory" class="trans-300" style="color:#f3f3f3; font-weight: 800">theory</span> <span style="white-space: nowrap;">to <span id="title-reality" class="trans-300" style="color:#363636; font-weight: 800">reality</span></span>
+                <h3 id="page-subtitle" style="color: #898989; width: min(70rem, 80%); margin-top: 2rem; text-align: center; font-weight: 400;">
+                    From <span id="title-theory" class="trans-300" style="color:#f3f3f3; font-weight: 800; transition-property: color;">theory</span> <span style="white-space: nowrap;">to <span id="title-reality" class="trans-300" style="color:#363636; font-weight: 800; transition-property: color">reality</span></span>
                 </h3>
             </section>
-        </section>
+
+            <!-- separator -->
+            <section id="vid-sep" class="disable-hidden trans-400"
+                    style="width:100%; height:fit-content; display: flex; justify-content: center; padding-top: 4rem; transition-property: opacity; background-color: #0d0f12">
+                <div style="width: 5rem; height:fit-content; display:flex; justify-content: space-between;">
+                    <div style="width:8pt; height:8pt; background-color: #363636; border-radius: 100%;"></div>
+                    <div style="width:8pt; height:8pt; background-color: #363636; border-radius: 100%;"></div>
+                    <div style="width:8pt; height:8pt; background-color: #363636; border-radius: 100%;"></div>
+                </div>
+            </section>
+
+            <section id="vid-section" class="disable-hidden trans-400"
+                    style="width: 100vw; height:100rem; background-color: #0d0f12; padding-top:4rem; display: flex; flex-direction: column; align-items: center; transition-property: opacity">
+                
+                <section id="vid-sec-title-container" class="trans-400" style="transition-property:opacity; width: min(30rem, 90%); height:fit-content; text-align: center;">
+                    <h2 class="trans-800" id="vid-sec-title" style="font-family:Montserrat; font-weight: 600; color:#ececec; letter-spacing: 3pt; transition-property: letter-spacing;">Featured Videos</h2>
+                    <p style="color:#b0b0b0; margin-top:7pt; margin-bottom:3.5rem">Get insight on the latest and greatest</p>
+                </section>
+                <a class="trigger" id="trig-3" style="position:relative; color:white; height:0">Trigger 3 (anchor) -----</a>
+
+                <section id="vid-content-container" style="width:100%; height: fit-content; display: flex; flex-direction: column; align-items: center;">
+                    <a class="trigger" id="trig-4" style="position:relative; color:white; height:0; margin-top:14.4rem">Trigger 4 -----</a>
+                    
+                    <section class="video-container">
+                        <!-- https://www.apple.com/105/media/us/privacy/2019/58349417-857c-47c2-89c3-6ab1a56a2f58/safari/large_2x.mp4 -->
+                        <video src="./assets/video/v1.mov" style="width:min(67.5rem, 90vw)" type="video/mov" autoplay="true" muted loop="true"></video>
+                        <!-- <video src="https://www.apple.com/105/media/us/privacy/2019/58349417-857c-47c2-89c3-6ab1a56a2f58/safari/large_2x.mp4" style="width:min(67.5rem, 90vw)" type="video/mov" autoplay="true" muted loop="true"></video> -->
+                        <section class="video-descriptions">
+                            <h2 style="margin-top:1rem; color:#fff">NVIDIA's NeRF But Training + Rendering Time Is 30s <span style="white-space:nowrap">[Instant-NGP]</span></h2>
+                            <p style="margin-top:1rem; color:#e0e0e0">
+                                NeRF, short for Neural Radiance Fields, is a rising AI field that takes in photos and output a 3D environment based on what you captured in the photos. This field only started developing less than 2 years ago, and look at where we are now with these mindblowing results...
+                            </p>
+
+                            <button>
+                                <p style="color:white">
+                                    Watch
+                                </p>
+                            </button>
+                        </section>
+                    </section>
+                </section>
+            </section>
     </section>
 
     <script defer src="./bundle/app.bundle.js"></script>

@@ -76,8 +76,12 @@ export const fadein_background = ():Promise<void> => {
 let parallax_elements:parallax_hmap[]=[];
 
 // set a parallax
-export const add_element_parallax = (id:string, speed:number, offset?:string):void => {
+export const add_element_parallax = (id:string, speed:number, offset:string="0px"):void => {
     parallax_elements.push({id, speed, offset})
+}
+export const set_element_parallax = (index:number, speed:number, offset:string="0px"):void => {
+    parallax_elements[index].speed = speed; 
+    parallax_elements[index].offset = offset;
 }
 
 // start parallax
@@ -86,8 +90,11 @@ export const update_parallax = ():void => {
         let ele = document.getElementById!(parallax_elements[i].id);
         if(!ele) continue; // if the element is null, continue to next element
         let speed = parallax_elements[i].speed;
-        let offset = parallax_elements[i].offset || "0rem";
+        let offset = parallax_elements[i].offset;
         
         ele.style.transform = `translateY(calc(${offset} + calc(-1 * ${document.getElementById("main-page")!.scrollTop * speed}px)))`;
+        
+        // request frame update
+        requestAnimationFrame(() => {});
     }
 }
