@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   width="64"
+   height="64"
+   viewBox="0 0 16.933333 16.933333"
+   version="1.1"
+   id="svg5"
+   sodipodi:docname="patreon-connection.svg"
+   inkscape:version="1.1 (c4e8f9e, 2021-05-24)"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <sodipodi:namedview
+     id="namedview2270"
+     pagecolor="#505050"
+     bordercolor="#ffffff"
+     borderopacity="1"
+     inkscape:pageshadow="0"
+     inkscape:pageopacity="0"
+     inkscape:pagecheckerboard="1"
+     showgrid="false"
+     inkscape:zoom="7.434878"
+     inkscape:cx="28.447003"
+     inkscape:cy="29.657514"
+     inkscape:window-width="1440"
+     inkscape:window-height="790"
+     inkscape:window-x="0"
+     inkscape:window-y="25"
+     inkscape:window-maximized="0"
+     inkscape:current-layer="svg5"
+     inkscape:snap-page="true" />
+  <defs
+     id="defs2" />
+  <path
+     id="path1014"
+     style="fill:#ffffff;stroke-width:99.9999;stroke-linecap:round;stroke-linejoin:round;stroke-opacity:0.2"
+     d="M 32 0 A 31.999999 31.999999 0 0 0 0 32 A 31.999999 31.999999 0 0 0 32 64 A 31.999999 31.999999 0 0 0 64 32 A 31.999999 31.999999 0 0 0 32 0 z M 17.863281 17.900391 L 23.746094 17.900391 L 23.746094 49.539062 L 17.863281 49.539062 L 17.863281 17.900391 z M 38.888672 17.900391 A 11.830611 11.830611 0 0 1 50.71875 29.730469 A 11.830611 11.830611 0 0 1 38.888672 41.560547 A 11.830611 11.830611 0 0 1 27.058594 29.730469 A 11.830611 11.830611 0 0 1 38.888672 17.900391 z "
+     transform="scale(0.26458333)" />
+</svg>

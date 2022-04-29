@@ -39,50 +39,78 @@
     visibility: hidden;
 }
 
+/* connections */
+.connections img:hover{
+    scale: 1.2;
+} #connections-container{
+    justify-content: center;
+} .connections img{
+    cursor:pointer;
+    scale: 1;
+    transition-property: scale;
+    padding: 0 10pt 0 10pt;
+} .cc-left{
+    justify-content: center;
+}
+
 /* videos */
 .video-container{
     display: flex;
-    width: fit-content; height: fit-content;
-    display: flex;
+    width:min(67.5rem, 95vw); height: fit-content;
+    display: flex; flex-direction: column;
     justify-content: center;
     
     position:relative;
-    overflow: hidden;
     border-radius: 2rem;
-} .video-descriptions{
-    position:absolute;
-    width:min(27rem, 90%);
-    height: calc(100% - 2rem);
-    background-color: #484848d2;
 
-    right:0; top:0;
+    overflow: hidden;
+} .video-descriptions{
+    position:relative;
+    width: calc(100% - 4rem);
+    height: fit-content;
+    background-color: #1a1a1a;
     
     backdrop-filter:blur(30px);
-
-    border: 1px solid #464646;
-    box-shadow: 0 0 5rem #000000a9;
 
     padding: 1rem 2rem 1rem 2rem;
     display: flex; flex-direction: column;
     align-items: center;
+    text-align: center;
+
+    border-radius: 0 0 2rem 2rem;
 }
-@-moz-document url-prefix() {
-    .video-descriptions{
-        background-color: #484848fa;
-    }
-}
-.video-container button{
-    position: absolute;
-    bottom:1.5rem;
+.video-container a{
+    position: relative;
     padding: 0.5rem 2rem 0.5rem 2rem;
     background-color: #0d86ff;
     border:none;
     border-radius: 100rem;
     cursor:pointer;
+    text-decoration: none;
+
+    margin:30pt 0 14pt 0;
 }
-@media(hover: hover) { .video-container button:hover{
+.video-container a:hover{
     background-color: #0a74df;
-}}
+}
+
+.video-control-container{
+    position: absolute;
+    width: 100%;
+    aspect-ratio: 640/352;
+    left:0; top:0;
+    display: flex; justify-content: center; align-items: flex-end;
+}.video-control-container img{
+    opacity: 0;
+    width: 24pt; height:24pt;
+    margin-bottom: 1rem;
+    transition-property: opacity;
+}.video-control-container:hover img{
+    opacity: 1;
+    cursor:pointer;
+}
+
+
 
 /* This is just for page & generic styling */
 body{
@@ -115,7 +143,7 @@ hr{
 
     filter: brightness(0.5);
 
-    margin-left: 25rem;
+    margin-left: 200pt;
 }
 
 #title-text-container{
@@ -123,6 +151,12 @@ hr{
 } #title-text-container h1{
     text-align: center;
 } #title-text-container h3{
+    text-align: center;
+}
+
+#about-text-container{
+    flex-direction: column;
+} #about-text-container p{
     text-align: center;
 }
 
@@ -141,6 +175,15 @@ hr{
 
     /* special view classes */
     
+    /* connections */
+    #connections-container{
+        justify-content: flex-end;
+    } .connections img{
+        padding: 0 5pt 0 5pt;
+    } .cc-left{
+        justify-content: flex-start !important;
+    }
+
     body{
     }
 
@@ -161,8 +204,72 @@ hr{
     } #title-text-container h3{
         text-align: right;
     }
+
+    /* videos */
+    .video-container{
+        width:min(67.5rem, 90vw);
+        aspect-ratio: 640/352;
+    } .video-descriptions{
+        position:absolute;
+        width: 40%; height: calc(100% - 1rem);
+        right:0; top:0;
+
+        padding: 0.5rem 1.5rem 0.5rem 1.5rem;
+        text-align: left;
+        background-color: #484848d2;
+
+        border: 1px solid #464646;
+        box-shadow: 0 0 5rem #000000a9;
+    
+        border-radius: 0;
+    }
+    @-moz-document url-prefix() {
+        .video-descriptions{
+            background-color: #484848fa;
+        }
+    }
+    .video-container a{
+        position: absolute;
+        font-size: 0.5rem;
+        bottom:1.5rem;
+        margin:0;
+    } .video-container a > p{
+        font-size: 1rem;
+    }
+
+    .video-control-container{
+        width: calc(60% - 4rem); height:100%;
+        left:0; bottom:0; top:unset;
+    }.video-control-container img{
+        margin-bottom: 2rem;
+    }
+
+    #about-text-container{
+        flex-direction: row;
+    } #about-text-container p{
+        text-align: left;
+    }
 }
 
 /* ====================== LARGE ====================== */
 @media screen and (min-width: 1300px) {
+    /* videos */
+    .video-container{
+        width:min(67.5rem, 90vw);
+    } .video-descriptions{
+        position:absolute;
+        width: 40%;
+        
+        padding: 1rem 2rem 1rem 2rem;
+    }
+    .video-container a{
+        bottom:3rem;
+    } .video-container a > p{
+        font-size: 1.25rem;
+    }
+
+    .video-control-container{
+        width: calc(60% - 4rem); height:100%;
+        left:0; bottom:0;
+    }
 }

@@ -34,9 +34,9 @@ h6{
 }
 
 #page-title{
-    font-size:4rem
+    font-size:3.5rem
 } #page-subtitle{
-    font-size:2rem
+    font-size:1.5rem
 } 
 
 p{    
@@ -53,7 +53,7 @@ p{
         font-size: calc(3rem + var(--font-offset));
     }
     h2{
-        font-size: calc(2rem + var(--font-offset));
+        font-size: calc(1.8rem + var(--font-offset));
     }
     h3{
         font-size: calc(1.4rem + var(--font-offset));
@@ -72,6 +72,7 @@ p{
         text-shadow: 0 0 1rem #13011df5;
         font-family: "Nova Square";
     }
+
 }
 
 /* ====================== MEDIUM ====================== */

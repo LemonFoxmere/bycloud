@@ -27,11 +27,13 @@
         <a class="trigger" id="trig-epsilon" style="color:darkcyan; top:20%; position:fixed; right:0">   ----- Epsilon</a>
         <a class="trigger" id="trig-beta" style="color:green; top:35%; position:fixed; right:0">     -------- Beta</a>
         <a class="trigger" id="trig-alpha" style="color:blue; top:50%; position:fixed; right:0">     ------- Alpha</a>
+        <a class="trigger" id="trig-theta" style="color:magenta; top:100%; position:fixed; right:0;">     ------- Theta</a>
+        <a class="trigger" id="trig-omega" style="top:-10%; position:fixed; right:0;">     ------- Omega</a>
         <!-- logo -->
     </div>
 
     <!-- background image -->
-    <img id="main-bg" class="unselectable" src="./assets/img/ras/header.png" alt="background" draggable="false" ondragstart="return false;"/>
+    <img id="main-bg" class="unselectable" src="./assets/img/ras/header.jpg" alt="background" draggable="false" ondragstart="return false;"/>
     <section id="bg-container" style="position:fixed; display:flex; flex-direction: column; justify-content: space-between; overflow:hidden; transform: translateY(0);">
         <!-- glo top -->
         <div id="glo2" class="no-mobile-display unselectable" style="margin-left: 7%; width: 70%; transform: translateY(-2rem); height:4rem; background-color: #84a4ff; opacity: 0; filter:blur(50px)" ondragstart="return false" draggable="false"></div>
@@ -55,6 +57,13 @@
             <section id="title-text-container" class="trans-400" style="z-index: 5;">
                 <h1 class="title" style="width: 100%; line-height: 130%; letter-spacing: 3pt; text-shadow: 0 0 1rem #ffffffb9;">BYCLOUD</h1>
                 <h3 style="width: 100%; text-shadow: 0 0 1rem #13011df5; font-weight: 400; line-height: 110%;">Hands on with <span style="white-space: nowrap;">the latest AI tech</span></h3>
+                <!-- connections -->
+                <section id="connections-container" style="display: flex; margin-top: 20pt;">
+                    <a href="https://www.youtube.com/c/bycloudAI" target="_blank" class="connections"><img class="trans-400" src="./assets/img/vec/youtube-connection.svg" style="width: 28pt; height: auto;" alt="youtube"></a>
+                    <a href="https://www.twitter.com/ytcloud_" target="_blank" class="connections"><img class="trans-400" src="./assets/img/vec/patreon-connection.svg" style="width: 28pt; height: auto;" alt="youtube"></a>
+                    <a href="https://www.patreon.com/bycloud" target="_blank" class="connections"><img class="trans-400" src="./assets/img/vec/twitter-connection.svg" style="width: 28pt; height: auto;" alt="youtube"></a>
+                    <a href="https://github.com/bycloudai" target="_blank" class="connections"><img class="trans-400" src="./assets/img/vec/github-connection.svg" style="width: 28pt; height: auto;" alt="youtube"></a>
+                </section>
             </section>
         </section>
 
@@ -101,37 +110,143 @@
                 </div>
             </section>
 
+            <!-- all videos -->
+
             <section id="vid-section" class="disable-hidden trans-400"
-                    style="width: 100vw; height:100rem; background-color: #0d0f12; padding-top:4rem; display: flex; flex-direction: column; align-items: center; transition-property: opacity">
-                
-                <section id="vid-sec-title-container" class="trans-400" style="transition-property:opacity; width: min(30rem, 90%); height:fit-content; text-align: center;">
+                    style="width: 100vw; height:fit-content; background-color: #0d0f12; padding-top:4rem; display: flex; flex-direction: column; align-items: center; transition-property: opacity">
+
+                <!-- CHANNEL 1 TITLE -->
+                <section id="vid-sec-title-container" class="trans-400" style="transition-property:opacity; width: min(40rem, 90%); height:fit-content; text-align: center;">
                     <h2 class="trans-800" id="vid-sec-title" style="font-family:Montserrat; font-weight: 600; color:#ececec; letter-spacing: 3pt; transition-property: letter-spacing;">Featured Videos</h2>
-                    <p style="color:#b0b0b0; margin-top:7pt; margin-bottom:3.5rem">Get insight on the latest and greatest</p>
+                    <p style="color:#b0b0b0; margin-top:7pt; margin-bottom:3.5rem">Get insights on some of the coolest AI tech in the world.</p>
                 </section>
                 <a class="trigger" id="trig-3" style="position:relative; color:white; height:0">Trigger 3 (anchor) -----</a>
 
+                <!-- CHANNEL 1 VIDEO 1 -->
                 <section id="vid-content-container" style="width:100%; height: fit-content; display: flex; flex-direction: column; align-items: center;">
                     <a class="trigger" id="trig-4" style="position:relative; color:white; height:0; margin-top:14.4rem">Trigger 4 -----</a>
                     
-                    <section class="video-container">
-                        <!-- https://www.apple.com/105/media/us/privacy/2019/58349417-857c-47c2-89c3-6ab1a56a2f58/safari/large_2x.mp4 -->
-                        <video src="./assets/video/v1.mov" style="width:min(67.5rem, 90vw)" type="video/mov" autoplay="true" muted loop="true"></video>
-                        <!-- <video src="https://www.apple.com/105/media/us/privacy/2019/58349417-857c-47c2-89c3-6ab1a56a2f58/safari/large_2x.mp4" style="width:min(67.5rem, 90vw)" type="video/mov" autoplay="true" muted loop="true"></video> -->
+                    <section class="video-container" style="background-image: url(./assets/video/v1-tn.jpg); background-size: cover; background-repeat: no-repeat;">
+                    <video id="nerf-video" style="width:100%" type="video/mov" muted loop="true"></video>
                         <section class="video-descriptions">
-                            <h2 style="margin-top:1rem; color:#fff">NVIDIA's NeRF But Training + Rendering Time Is 30s <span style="white-space:nowrap">[Instant-NGP]</span></h2>
-                            <p style="margin-top:1rem; color:#e0e0e0">
-                                NeRF, short for Neural Radiance Fields, is a rising AI field that takes in photos and output a 3D environment based on what you captured in the photos. This field only started developing less than 2 years ago, and look at where we are now with these mindblowing results...
+                            <h2 style="margin-top:1rem; color:#fff">NVIDIA's NeRF But Training + Rendering Time Is 30s <span style="white-space: nowrap;">[Instant-NGP]</span></h2>
+                            <p style="margin-top:1.5rem; color:#e0e0e0">
+                                Neural Radiance Fields (NeRF) is a rising AI field that creates 3D environment out of a series of photos. Despite the technology being being relatively new, we are seeing some mindblowing results...
                             </p>
 
-                            <button>
+                            <a href="https://www.youtube.com/watch?v=fvXOjV7EHbk" target="_blank">
                                 <p style="color:white">
                                     Watch
                                 </p>
-                            </button>
+                            </a>
+                        </section>
+
+                        <section class="video-control-container">
+                            <img id="d8ee1d6e-8fd7-4ef5-aab2-e259752d4b23" class="video-controller trans-400" ctrl-video-id="nerf-video" src="./assets/img/vec/pause-nm.svg" alt="play/pause">
+                        </section>
+                    </section>
+
+                    <a class="trigger" id="trig-4.1" style="position:relative; color:white; height:0">Trigger 4.1 -----</a>
+                </section>
+
+                <!-- CHANNEL 1 VIDEO 2 -->
+                <section id="vid2-content-container" style="width:100%; height: fit-content; display: flex; flex-direction: column; align-items: center">           
+                    <a class="trigger" id="trig-5" style="position:relative; color:white; height:0; margin-top:40pt">Trigger 5 -----</a>
+                    
+                    <section class="video-container" style="background-image: url(./assets/video/v2-tn.jpg); background-size: cover; background-repeat: no-repeat;">
+                    <video id="anime-video" style="width:100%" type="video/mov" muted loop="true"></video>
+                        <section class="video-descriptions">
+                            <h2 style="margin-top:1rem; color:#fff">Best AI Anime Upscaler 2022</h2>
+                            <p style="margin-top:1.5rem; color:#e0e0e0">
+                                AI Super-resolution (upscaling AI) has always been a field of focus for developments in AI. And with recent innovative breakthroughs, you can not only upscale real world images and videos, but also your favorite anime shows with incredible quality.
+                            </p>
+
+                            <a href="https://www.youtube.com/watch?v=IVo19n4zFsc" target="_blank">
+                                <p style="color:white">
+                                    Watch
+                                </p>
+                            </a>
+                        </section>
+
+                        <section class="video-control-container">
+                            <img id="93aea5b7-3646-4d1c-8d76-b24629fd2e2a" class="video-controller trans-400" ctrl-video-id="anime-video" src="./assets/img/vec/pause-nm.svg" alt="play/pause">
+                        </section>
+                    </section>
+
+                    <a class="trigger" id="trig-5.1" style="position:relative; color:white; height:0">Trigger 5.1 -----</a>
+                </section>
+
+                <!-- CHANNEL 2 TITLE -->
+                <a class="trigger" id="trig-6" style="position:relative; color:white; height:0; margin-top: 70pt;">Trigger 6 (anchor) -----</a>
+                
+                <section id="vid2-sec-title-container" class="trans-400" style="transition-property:opacity; width: min(40rem, 90%); height:fit-content; text-align: center;">
+                    <h2 class="trans-800" id="vid2-sec-title" style="font-family:Montserrat; font-weight: 600; color:#ececec; letter-spacing: 3pt; transition-property: letter-spacing;">Tutorial Videos</h2>
+                    <p style="color:#b0b0b0; margin-top:7pt; margin-bottom:3.5rem">Get hands on with the latest AI tech.</p>
+                </section>
+
+                <!-- CHANNEL 2 VIDEO 1 -->
+                <section id="vid3-content-container" style="width:100%; height: fit-content; display: flex; flex-direction: column; align-items: center">           
+                    <a class="trigger" id="trig-7" style="position:relative; color:white; height:0; margin-top:24.4rem">Trigger 7 -----</a>
+                    
+                    <section class="video-container" style="background-image: url(./assets/video/v3-tn.jpg); background-size: cover; background-repeat: no-repeat;">
+                    <video id="tutorial-video" style="width:100%" type="video/mov" muted loop="true"></video>
+                        <section class="video-descriptions">
+                            <h2 style="margin-top:1rem; color:#fff">Instant-NGP Windows Installation Tutorial</h2>
+                            <p style="margin-top:1.5rem; color:#e0e0e0">
+                                Neural Radiance Fields (NeRF) is an incredible AI technology, and here's how you can set it up for your own needs - right on your own computer.
+                            </p>
+
+                            <a href="https://www.youtube.com/watch?v=kq9xlvz73Rg" target="_blank">
+                                <p style="color:white">
+                                    Watch
+                                </p>
+                            </a>
+                        </section>
+
+                        <section class="video-control-container">
+                            <img id="bd15c1d7-98d3-429b-a07a-32863fe8e2dc" class="video-controller trans-400" ctrl-video-id="tutorial-video" src="./assets/img/vec/pause-nm.svg" alt="play/pause">
+                        </section>
+                    </section>
+
+                    <a class="trigger" id="trig-7.1" style="position:relative; color:white; height:0">Trigger 7.1 -----</a>
+                </section>
+                
+            </section>
+
+           <!-- separator -->
+            <section id="vid-sep"
+                    style="width:100%; height:fit-content; display: flex; justify-content: center; padding-top: 4rem; transition-property: opacity; background-color: #0d0f12">
+                <div style="width: 5rem; height:fit-content; display:flex; justify-content: space-between;">
+                    <div style="width:8pt; height:8pt; background-color: #363636; border-radius: 100%;"></div>
+                    <div style="width:8pt; height:8pt; background-color: #363636; border-radius: 100%;"></div>
+                    <div style="width:8pt; height:8pt; background-color: #363636; border-radius: 100%;"></div>
+                </div>
+            </section>
+
+            <!-- about host section -->
+            <section style="width: 100%; height:fit-content; display: flex; flex-direction: column; align-items: center; padding-top:3rem">
+                <h1 style="margin:0; text-align: center; width: 90%;">About <span style="white-space: nowrap;">your host</span></h1>
+                <section id="about-text-container" style="margin-top:50pt; display: flex; width: 90%; justify-content: center; align-items: center;">
+                    <img src="./assets/img/ras/icon-sm.jpg" style="border-radius: 1000rem; width: min(20rem, 80%);" alt="">
+                    <div class="no-mobile-display" style="width: 40pt;"></div>
+                    <section id="about-text-container" style="display: flex; flex-direction: column; width: min(35rem, 90vw); justify-content: center; padding: 2rem 0 2rem 0">
+                        <h1 class="no-mobile-display">Hi there!</h1>
+                        <p style="color:#bababa; margin-top:2rem;">
+                            My name is bycloud and I make videos on YouTube, which mainly covers topics such as AI and anime technology. I also cover the latest papers that I find interesting and sometimes have installation tutorials on them, feel free to check them out.
+                        </p>
+
+                        <section id="connections-container" class="cc-left" style="display: flex; margin-top: 25pt; margin-bottom:10pt; width: 100%;">
+                            <a href="https://www.youtube.com/c/bycloudAI" target="_blank" class="connections"><img class="trans-400" src="./assets/img/vec/youtube-connection.svg" style="width: 28pt; height: auto;" alt="youtube"></a>
+                            <a href="https://www.youtube.com/c/bycloudump" target="_blank" class="connections"><img class="trans-400" src="./assets/img/vec/youtube-connection-dump.svg" style="width: 28pt; height: auto;" alt="youtube"></a>
+                            <a href="https://www.twitter.com/ytcloud_" target="_blank" class="connections"><img class="trans-400" src="./assets/img/vec/patreon-connection.svg" style="width: 28pt; height: auto;" alt="youtube"></a>
+                            <a href="https://www.patreon.com/bycloud" target="_blank" class="connections"><img class="trans-400" src="./assets/img/vec/twitter-connection.svg" style="width: 28pt; height: auto;" alt="youtube"></a>
+                            <a href="https://github.com/bycloudai" target="_blank" class="connections"><img class="trans-400" src="./assets/img/vec/github-connection.svg" style="width: 28pt; height: auto;" alt="youtube"></a>
                         </section>
                     </section>
                 </section>
             </section>
+
+        </section>
     </section>
 
     <script defer src="./bundle/app.bundle.js"></script>

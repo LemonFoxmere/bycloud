@@ -13,6 +13,10 @@ import {
     update_trigger_listener,
     trigger_element
 } from "./trig-handler";
+import{
+    add_video_control_elements,
+    load_video
+} from "./video-controller";
 
 export type callbacks = (content?: any) => any;
 
@@ -21,6 +25,11 @@ const init_ui = async () => {
     update_bg_container();
     update_title_container();
     
+    // add video controls for all ctrl buttons
+    document.querySelectorAll(".video-controller")!.forEach((e):void => {
+        add_video_control_elements(`${e.id}`);
+    })
+
     // add window scroll events
     add_element_parallax("bg-container", 0.4); // 0
     add_element_parallax("main-bg", 0.4); // 1
@@ -29,7 +38,9 @@ const init_ui = async () => {
 
     const vid_title_paraspeed:number = -0.7;
     let vid_title_topoffset:number = 0;
+    let vid2_title_topoffset:number = 0;
     add_element_parallax("vid-sec-title-container", 0); // 4
+    add_element_parallax("vid2-sec-title-container", 0); // 5
 
 
     // add triggers
@@ -70,6 +81,7 @@ const init_ui = async () => {
         },
     ])
 
+    // title parallax changes
     add_trigger_listener("trig-3", "trig-alpha", [ // update the parallax for vid when scroll up
         { // show titles
             scroll_past:():void => {
@@ -96,6 +108,32 @@ const init_ui = async () => {
         },
     ])
 
+    add_trigger_listener("trig-6", "trig-alpha", [ // update the parallax for vid when scroll up
+        { // show titles
+            scroll_past:():void => {
+                // update parallax offset
+                vid2_title_topoffset = document.getElementById("main-page")!.scrollTop * vid_title_paraspeed -
+                    (document.getElementById("trig-alpha")!.getBoundingClientRect().y -
+                    document.getElementById("trig-6")!.getBoundingClientRect().y)*vid_title_paraspeed // what the fuck?
+
+                set_element_parallax(5, vid_title_paraspeed, `${vid2_title_topoffset}px`);
+            },
+            scroll_back: ():void => {
+                set_element_parallax(5, 0);
+            }
+        },
+    ])
+    add_trigger_listener("trig-7", "trig-alpha", [ // stop parallax for vid
+        { // show titles
+            scroll_past:():void => {
+                document.getElementById("vid2-sec-title-container")!.classList.add("disable-hidden");
+            },
+            scroll_back: ():void => {
+                document.getElementById("vid2-sec-title-container")!.classList.remove("disable-hidden");
+            }
+        },
+    ])
+
     await fadein_background();
     set_flicker("glo1", true, "#b91ad8", Math.random() * 700 + 500);
     set_flicker("glo2", true, "#84a4ff", Math.random() * 700 + 200, 3000, 6000)
@@ -103,6 +141,11 @@ const init_ui = async () => {
 }
 
 window.onload = ():void => {
+    // load in videos
+    load_video("nerf-video", "./assets/video/v1.mov", "trig-4", "trig-4.1", true);
+    load_video("anime-video", "./assets/video/v2.mov", "trig-5", "trig-5.1", true);
+    load_video("tutorial-video", "./assets/video/v3.mov", "trig-7", "trig-7.1", true);
+    
     // set scroll animations
     init_ui();
     update_trigger_listener();
