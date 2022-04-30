@@ -26,7 +26,7 @@ module.exports = smp.wrap({
     },
     output: {
         filename: '[name].bundle.js',
-        path: path.resolve(__dirname, 'dist/bundle'),
+        path: path.resolve(__dirname, 'docs/bundle'),
         clean: true,
     },
 });
