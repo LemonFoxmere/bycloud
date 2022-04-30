@@ -92,7 +92,7 @@ export const update_parallax = ():void => {
         let speed = parallax_elements[i].speed;
         let offset = parallax_elements[i].offset;
         
-        ele.style.transform = `translateY(calc(${offset} + calc(-1 * ${document.getElementById("main-page")!.scrollTop * speed}px)))`;
+        ele.style.transform = `translate3d(0, calc(${offset} + calc(-1 * ${document.getElementById("main-page")!.scrollTop * speed}px)), 0)`;
         
         // request frame update
         requestAnimationFrame(() => {});

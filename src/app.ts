@@ -17,6 +17,7 @@ import{
     add_video_control_elements,
     load_video
 } from "./video-controller";
+import { fix_safari_display } from "./safari-fix";
 
 export type callbacks = (content?: any) => any;
 
@@ -24,6 +25,9 @@ const init_ui = async () => {
     // init size of title
     update_bg_container();
     update_title_container();
+
+    // fix safari's bullshit
+    const is_saf:boolean = fix_safari_display();
     
     // add video controls for all ctrl buttons
     document.querySelectorAll(".video-controller")!.forEach((e):void => {
@@ -82,7 +86,7 @@ const init_ui = async () => {
     ]);
 
     // title parallax changes
-    add_trigger_listener("trig-3", "trig-alpha", [ // update the parallax for vid when scroll up
+    if(!is_saf) add_trigger_listener("trig-3", "trig-alpha", [ // update the parallax for vid when scroll up (no safari treat. fuck you safari)
         { // show titles
             scroll_past:():void => {
                 // update parallax offset
@@ -97,14 +101,14 @@ const init_ui = async () => {
             }
         },
     ]);
-    add_trigger_listener("trig-4", "trig-beta", [ // stop parallax for vid
+    add_trigger_listener("trig-4", "trig-beta", [ // hide channel 1 title
         { // show titles
             scroll_past:():void => { document.getElementById("vid-sec-title-container")!.classList.add("disable-hidden"); },
             scroll_back: ():void => { document.getElementById("vid-sec-title-container")!.classList.remove("disable-hidden"); }
         },
     ]);
 
-    add_trigger_listener("trig-6", "trig-alpha", [ // update the parallax for vid when scroll up
+    if(!is_saf)  add_trigger_listener("trig-6", "trig-alpha", [ // update the parallax for vid when scroll up (same thing, no safari view. Fuck you apple)
         { // show titles
             scroll_past:():void => {
                 // update parallax offset
@@ -119,7 +123,7 @@ const init_ui = async () => {
             }
         },
     ]);
-    add_trigger_listener("trig-7", "trig-alpha", [ // stop parallax for vid
+    add_trigger_listener("trig-7", "trig-alpha", [ // hide channel 2 title
         { // show titles
             scroll_past:():void => { document.getElementById("vid2-sec-title-container")!.classList.add("disable-hidden"); },
             scroll_back: ():void => { document.getElementById("vid2-sec-title-container")!.classList.remove("disable-hidden"); }
@@ -168,6 +172,17 @@ const init_ui = async () => {
 }
 
 window.onload = ():void => {
+
+    // fix down the body size first (if on mobile)
+    const is_mobile:boolean = /Android|webOS|iPhone|iPad|iPod|BlackBerry|BB|PlayBook|IEMobile|Windows Phone|Kindle|Silk|Opera Mini/i.test(navigator.userAgent);
+    if(is_mobile){
+        const k = <HTMLBodyElement> document.querySelector("body");
+        if(!k) return; // if this code runs idk what is going on
+        k.style.width = `${window.innerWidth}px`;
+        k.style.minHeight = `${window.innerHeight}px`;
+        k.style.maxHeight = `${window.innerHeight}px`;
+    }
+
     // load in videos
     load_video("nerf-video", "./assets/video/v1.mov", "trig-4", "trig-4.1", true);
     load_video("anime-video", "./assets/video/v2.mov", "trig-5", "trig-5.1", true);
