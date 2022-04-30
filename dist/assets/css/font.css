@@ -10,7 +10,7 @@ h1,h2,h3,h4,h5,h6{ /* for all titles */
 }
 
 h1{
-    font-size: calc(3rem + var(--font-offset));
+    font-size: calc(2.2rem + var(--font-offset));
 }
 h2{
     font-size: calc(1.5rem + var(--font-offset));
@@ -27,17 +27,45 @@ h5{
 h6{
     font-size: calc(1rem + var(--font-offset));
 }
+/* copyright */
+#copyright{
+    font-size: 1rem;
+    position: fixed;
+    bottom:0;
+    padding: 0.5rem 0 0.5rem;
+    color:#ffffff7b;
+    width: 100%;
+    text-align: center;
+    background-color: #0d0f12a9;
+    backdrop-filter: blur(13px);
+    border-top: 1px solid #252a32;
+}
+@-moz-document url-prefix() {#copyright{
+    background-color: #0d0f12de;
+}}
 
 .title{
     font-size: calc(3.5rem + var(--font-offset));
     font-family: "Nova Square";
 }
 
-#page-title{
+.page-title{
     font-size:3.5rem
-} #page-subtitle{
+} .page-subtitle{
     font-size:1.5rem
+} .end-page-title{
+    font-size:3.5rem;
+} .end-page-subtitle{
+    font-size:1.75rem
 } 
+
+#signa-bounce{
+    text-decoration: none;
+    margin:0
+}
+#signa-bounce:hover span{
+    text-decoration: underline;
+}
 
 p{    
     font-family: "Montserrat", 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
@@ -46,6 +74,16 @@ p{
 } .monospaced{
     font-family: "Fira Code", monospace;
 }
+
+/* ====================== REALLY SMALL ======================== */
+@media screen and (max-width: 350px) {
+    .end-page-title{
+        font-size:3rem
+    } .end-page-subtitle{
+        font-size:1.5rem
+    }
+}
+
 
 /* ====================== MEDIUM ====================== */
 @media screen and (min-width: 900px) {
@@ -73,6 +111,9 @@ p{
         font-family: "Nova Square";
     }
 
+    .end-page-title{
+        font-size:5rem;
+    }
 }
 
 /* ====================== MEDIUM ====================== */
@@ -100,10 +141,13 @@ p{
         text-shadow: 0 0 1rem #13011df5;
         font-family: "Nova Square";
     }
-    #page-title{
+    .page-title{
         font-size:5.5rem
-    }
-    #page-subtitle{
+    } .page-subtitle{
         font-size:2.5rem
+    } .end-page-title{
+        font-size:7rem;
+    } .end-page-subtitle{
+        font-size:2rem;
     }
 }

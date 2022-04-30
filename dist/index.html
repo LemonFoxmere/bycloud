@@ -33,12 +33,12 @@
     </div>
 
     <!-- background image -->
-    <img id="main-bg" class="unselectable" src="./assets/img/ras/header.jpg" alt="background" draggable="false" ondragstart="return false;"/>
+    <img id="main-bg" class="unselectable" src="./assets/img/ras/header.jpg" alt="background" draggable="false" ondragstart="()=>{return false;}"/>
     <section id="bg-container" style="position:fixed; display:flex; flex-direction: column; justify-content: space-between; overflow:hidden; transform: translateY(0);">
         <!-- glo top -->
-        <div id="glo2" class="no-mobile-display unselectable" style="margin-left: 7%; width: 70%; transform: translateY(-2rem); height:4rem; background-color: #84a4ff; opacity: 0; filter:blur(50px)" ondragstart="return false" draggable="false"></div>
+        <div id="glo2" class="no-mobile-display unselectable" style="margin-left: 7%; width: 70%; transform: translateY(-2rem); height:4rem; background-color: #84a4ff; opacity: 0; filter:blur(50px)" ondragstart="()=>{return false;}" draggable="false"></div>
         <!-- glo bottom -->
-        <div id="glo1" class="no-mobile-display unselectable" style="margin-left: 45%; width: 14rem; height:3rem; background-color: #b91ad8; opacity: 0; filter:blur(50px)" ondragstart="return false" draggable="false"></div>
+        <div id="glo1" class="no-mobile-display unselectable" style="margin-left: 45%; width: 14rem; height:3rem; background-color: #b91ad8; opacity: 0; filter:blur(50px)" ondragstart="()=>{return false;}" draggable="false"></div>
     </section>
     <!-- background vignette -->
     <section class="no-mobile-view" style="position:fixed; width: min(100%, 150rem); display:flex; justify-content: space-between;">
@@ -59,10 +59,10 @@
                 <h3 style="width: 100%; text-shadow: 0 0 1rem #13011df5; font-weight: 400; line-height: 110%;">Hands on with <span style="white-space: nowrap;">the latest AI tech</span></h3>
                 <!-- connections -->
                 <section id="connections-container" style="display: flex; margin-top: 20pt;">
-                    <a href="https://www.youtube.com/c/bycloudAI" target="_blank" class="connections"><img class="trans-400" src="./assets/img/vec/youtube-connection.svg" style="width: 28pt; height: auto;" alt="youtube"></a>
-                    <a href="https://www.twitter.com/ytcloud_" target="_blank" class="connections"><img class="trans-400" src="./assets/img/vec/patreon-connection.svg" style="width: 28pt; height: auto;" alt="youtube"></a>
-                    <a href="https://www.patreon.com/bycloud" target="_blank" class="connections"><img class="trans-400" src="./assets/img/vec/twitter-connection.svg" style="width: 28pt; height: auto;" alt="youtube"></a>
-                    <a href="https://github.com/bycloudai" target="_blank" class="connections"><img class="trans-400" src="./assets/img/vec/github-connection.svg" style="width: 28pt; height: auto;" alt="youtube"></a>
+                    <a href="https://www.youtube.com/c/bycloudAI" target="_blank" class="connections"><img class="trans-400" title="YouTube" src="./assets/img/vec/youtube-connection.svg" style="width: 28pt; height: auto;" alt="youtube"></a>
+                    <a href="https://www.patreon.com/bycloud" target="_blank" class="connections"><img class="trans-400" title="Patreon" src="./assets/img/vec/patreon-connection.svg" style="width: 28pt; height: auto;" alt="youtube"></a>
+                    <a href="https://www.patreon.com/bycloud" target="_blank" class="connections"><img class="trans-400" title="Twitter" src="./assets/img/vec/twitter-connection.svg" style="width: 28pt; height: auto;" alt="youtube"></a>
+                    <a href="https://github.com/bycloudai" target="_blank" class="connections"><img class="trans-400" title="Github" src="./assets/img/vec/github-connection.svg" style="width: 28pt; height: auto;" alt="youtube"></a>
                 </section>
             </section>
         </section>
@@ -79,23 +79,15 @@
             <section id="about-content" class="disable-hidden trans-500" style="width: 100%; height:fit-content; background-color: #0d0f12; padding-top: 7rem; display: flex; align-items: center; flex-direction: column; transition-property: opacity; position:relative">
                 <a class="trigger" id="trig-2" style="position:absolute; top:75%; color:white; height:0">Trigger 2 -----</a>
                 
-                <h1 id="page-title" style="width: 80%; text-align:center">
-                    Explore the <span style="white-space: nowrap; 
-                    background-color:#da99ff; background-image:
-                    radial-gradient(at 87% 44%, hsla(223,70%,78%,1) 0px, transparent 50%),
-                    radial-gradient(at 76% 71%, hsla(260,97%,61%,1) 0px, transparent 50%),
-                    radial-gradient(at 90% 10%, hsla(338,78%,60%,1) 0px, transparent 50%),
-                    radial-gradient(at 32% 68%, hsla(357,99%,79%,1) 0px, transparent 50%),
-                    radial-gradient(at 62% 29%, hsla(284,73%,79%,1) 0px, transparent 50%),
-                    radial-gradient(at 35% 23%, hsla(195,91%,76%,1) 0px, transparent 50%),
-                    radial-gradient(at 71% 80%, hsla(315,99%,69%,1) 0px, transparent 50%);
-                    -webkit-background-clip: text;
+                <h1 class="page-title" style="width: 100%; padding: 0 10pt 0 10pt; text-align:center">
+                    Explore the <span class="rainbow-bg" style="white-space: nowrap; 
+                    -webkit-background-clip: text; background-clip: text;
                     -webkit-text-fill-color: transparent;
                     font-weight: 900;
                     line-height: 120%;
                     ">AI Frontier</span>
                 </h1>
-                <h3 id="page-subtitle" style="color: #898989; width: min(70rem, 80%); margin-top: 2rem; text-align: center; font-weight: 400;">
+                <h3 class="page-subtitle" style="color: #898989; width: min(70rem, 80%); margin-top: 2rem; text-align: center; font-weight: 400;">
                     From <span id="title-theory" class="trans-300" style="color:#f3f3f3; font-weight: 800; transition-property: color;">theory</span> <span style="white-space: nowrap;">to <span id="title-reality" class="trans-300" style="color:#363636; font-weight: 800; transition-property: color">reality</span></span>
                 </h3>
             </section>
@@ -129,7 +121,7 @@
                     <section class="video-container" style="background-image: url(./assets/video/v1-tn.jpg); background-size: cover; background-repeat: no-repeat;">
                     <video id="nerf-video" style="width:100%" type="video/mov" muted loop="true"></video>
                         <section class="video-descriptions">
-                            <h2 style="margin-top:1rem; color:#fff">NVIDIA's NeRF But Training + Rendering Time Is 30s <span style="white-space: nowrap;">[Instant-NGP]</span></h2>
+                            <h2 style="margin-top:1rem; color:#fff">NVIDIA's NeRF But Training + Rendering Time Is 30s</h2>
                             <p style="margin-top:1.5rem; color:#e0e0e0">
                                 Neural Radiance Fields (NeRF) is a rising AI field that creates 3D environment out of a series of photos. Despite the technology being being relatively new, we are seeing some mindblowing results...
                             </p>
@@ -141,8 +133,8 @@
                             </a>
                         </section>
 
-                        <section class="video-control-container">
-                            <img id="d8ee1d6e-8fd7-4ef5-aab2-e259752d4b23" class="video-controller trans-400" ctrl-video-id="nerf-video" src="./assets/img/vec/pause-nm.svg" alt="play/pause">
+                        <section class="video-control-container" >
+                            <img id="d8ee1d6e-8fd7-4ef5-aab2-e259752d4b23" class="video-controller trans-400" ctrl-video-id="nerf-video" src="./assets/img/vec/pause-nm.svg" alt="play/pause" draggable="false" ondragstart="()=>{return false;}">
                         </section>
                     </section>
 
@@ -168,8 +160,8 @@
                             </a>
                         </section>
 
-                        <section class="video-control-container">
-                            <img id="93aea5b7-3646-4d1c-8d76-b24629fd2e2a" class="video-controller trans-400" ctrl-video-id="anime-video" src="./assets/img/vec/pause-nm.svg" alt="play/pause">
+                        <section class="video-control-container" >
+                            <img id="93aea5b7-3646-4d1c-8d76-b24629fd2e2a" class="video-controller trans-400" ctrl-video-id="anime-video" src="./assets/img/vec/pause-nm.svg" alt="play/pause" draggable="false" ondragstart="()=>{return false;}">
                         </section>
                     </section>
 
@@ -203,8 +195,8 @@
                             </a>
                         </section>
 
-                        <section class="video-control-container">
-                            <img id="bd15c1d7-98d3-429b-a07a-32863fe8e2dc" class="video-controller trans-400" ctrl-video-id="tutorial-video" src="./assets/img/vec/pause-nm.svg" alt="play/pause">
+                        <section class="video-control-container" >
+                            <img id="bd15c1d7-98d3-429b-a07a-32863fe8e2dc" class="video-controller trans-400" ctrl-video-id="tutorial-video" src="./assets/img/vec/pause-nm.svg" alt="play/pause" draggable="false" ondragstart="()=>{return false;}">
                         </section>
                     </section>
 
@@ -213,9 +205,10 @@
                 
             </section>
 
-           <!-- separator -->
-            <section id="vid-sep"
+            <!-- separator -->
+            <section id="vid-sep-2" class="trans-400"
                     style="width:100%; height:fit-content; display: flex; justify-content: center; padding-top: 4rem; transition-property: opacity; background-color: #0d0f12">
+                <a class="trigger" id="trig-8" style="position:relative; color:white; height:0">Trigger 8 -----</a>
                 <div style="width: 5rem; height:fit-content; display:flex; justify-content: space-between;">
                     <div style="width:8pt; height:8pt; background-color: #363636; border-radius: 100%;"></div>
                     <div style="width:8pt; height:8pt; background-color: #363636; border-radius: 100%;"></div>
@@ -224,31 +217,124 @@
             </section>
 
             <!-- about host section -->
-            <section style="width: 100%; height:fit-content; display: flex; flex-direction: column; align-items: center; padding-top:3rem">
-                <h1 style="margin:0; text-align: center; width: 90%;">About <span style="white-space: nowrap;">your host</span></h1>
+            <section id="host-section" class="trans-400" style="width: 100%; height:fit-content; display: flex; flex-direction: column; align-items: center; padding-top:3rem">
+                <h1 class="page-title" style="margin:0; text-align: center; width: 90%;">About <span style="white-space: nowrap;">Your Host</span></h1>
                 <section id="about-text-container" style="margin-top:50pt; display: flex; width: 90%; justify-content: center; align-items: center;">
-                    <img src="./assets/img/ras/icon-sm.jpg" style="border-radius: 1000rem; width: min(20rem, 80%);" alt="">
+                    <img src="./assets/img/ras/icon-sm.jpg" style="border-radius: 1000rem; width: min(20rem, 80%);" alt="" draggable="false" ondragstart="()=>{return false;}">
                     <div class="no-mobile-display" style="width: 40pt;"></div>
                     <section id="about-text-container" style="display: flex; flex-direction: column; width: min(35rem, 90vw); justify-content: center; padding: 2rem 0 2rem 0">
-                        <h1 class="no-mobile-display">Hi there!</h1>
+                        <h1 style="font-family: Montserrat;" class="no-mobile-display">Hi there! 👋</h1>
                         <p style="color:#bababa; margin-top:2rem;">
                             My name is bycloud and I make videos on YouTube, which mainly covers topics such as AI and anime technology. I also cover the latest papers that I find interesting and sometimes have installation tutorials on them, feel free to check them out.
                         </p>
 
                         <section id="connections-container" class="cc-left" style="display: flex; margin-top: 25pt; margin-bottom:10pt; width: 100%;">
-                            <a href="https://www.youtube.com/c/bycloudAI" target="_blank" class="connections"><img class="trans-400" src="./assets/img/vec/youtube-connection.svg" style="width: 28pt; height: auto;" alt="youtube"></a>
-                            <a href="https://www.youtube.com/c/bycloudump" target="_blank" class="connections"><img class="trans-400" src="./assets/img/vec/youtube-connection-dump.svg" style="width: 28pt; height: auto;" alt="youtube"></a>
-                            <a href="https://www.twitter.com/ytcloud_" target="_blank" class="connections"><img class="trans-400" src="./assets/img/vec/patreon-connection.svg" style="width: 28pt; height: auto;" alt="youtube"></a>
-                            <a href="https://www.patreon.com/bycloud" target="_blank" class="connections"><img class="trans-400" src="./assets/img/vec/twitter-connection.svg" style="width: 28pt; height: auto;" alt="youtube"></a>
-                            <a href="https://github.com/bycloudai" target="_blank" class="connections"><img class="trans-400" src="./assets/img/vec/github-connection.svg" style="width: 28pt; height: auto;" alt="youtube"></a>
+                            <a href="https://www.youtube.com/c/bycloudAI" target="_blank" class="connections"><img title="YouTube" class="trans-400" src="./assets/img/vec/youtube-connection.svg" style="width: 28pt; height: auto;" alt="youtube"></a>
+                            <a href="https://www.patreon.com/bycloud" target="_blank" class="connections"><img title="Patreon" class="trans-400" src="./assets/img/vec/patreon-connection.svg" style="width: 28pt; height: auto;" alt="youtube"></a>
+                            <a href="https://www.patreon.com/bycloud" target="_blank" class="connections"><img title="Twitter" class="trans-400" src="./assets/img/vec/twitter-connection.svg" style="width: 28pt; height: auto;" alt="youtube"></a>
+                            <a href="https://github.com/bycloudai" target="_blank" class="connections"><img title="Github" class="trans-400" src="./assets/img/vec/github-connection.svg" style="width: 28pt; height: auto;" alt="youtube"></a>
                         </section>
                     </section>
                 </section>
             </section>
 
+            <!-- separator -->
+            <section id="host-sep" class="trans-400"
+            style="width:100%; height:fit-content; display: flex; justify-content: center; padding-top: 4rem; transition-property: opacity; background-color: #0d0f12">
+                <a class="trigger" id="trig-9" style="position:relative; color:white; height:0; width: 0; white-space: nowrap;">Trigger 9 -----</a>
+                <div style="width: 5rem; height:fit-content; display:flex; justify-content: space-between;">
+                    <div style="width:8pt; height:8pt; background-color: #363636; border-radius: 100%;"></div>
+                    <div style="width:8pt; height:8pt; background-color: #363636; border-radius: 100%;"></div>
+                    <div style="width:8pt; height:8pt; background-color: #363636; border-radius: 100%;"></div>
+                </div>
+            </section>
+
+            <!-- Patreon section -->
+            <section id="pat-section" class="trans-400" style="width: 100%; height:fit-content; display: flex; flex-direction: column; align-items: center; padding-top:3rem">
+                <h1 class="page-title" style="margin:0; text-align: center; width: 90%;">The Patreons</span></h1>
+                <p style="margin-top:17pt; text-align: center; width: 90%; color:#b3b3b3">Without you, BycloudAI cannot exist. ❤️‍🔥</span></p>
+                
+                <!-- ========== GOD TIER ========== -->
+                <section class="pat-tier-container" style="border-color: #ffffff46;">
+                    <h1 class="pat-tier-title"><span class="god-tier-text-color">God Tier</span></h1>
+
+                    <!-- add your patreons here by copying and pasting this line, and changing the name -->
+                    <p class="pat-member member-god"><span class="pat-mem-foreground trans-300">Andrew Lescelius</span></p>
+
+                    <!-- THIS IS THE ADD BUTTON. I DON'T KNOW WHY IT WORKS, BUT THE INSTANT I CHANGE A SINGLE LETTER EVERYTHING BREAKS. DON'T FUCKING TOUCH THIS LINE!!! -->
+                    <a target="_blank" href="https://www.patreon.com/bycloud" style="text-decoration: none;"><p class="pat-member rainbow-bg" style="cursor:pointer; box-shadow: 0 0 1.5rem #ff88efa3"><span class="pat-mem-foreground trans-300" style="padding: 5pt 7.5pt 5pt 7.5pt; line-height: 0;"><strong>﹢</strong></span></p></a>
+                </section>
+
+                <!-- ========== LEGENDARY TIER ========== -->
+                <section class="pat-tier-container" style="border-color: #ffffff46;">
+                    <h1 class="pat-tier-title"><span style="background: linear-gradient(210deg, #ff8e43 0%, #ff9b3e 49%, #ffe45c 100%); -webkit-background-clip: text; background-clip:text; -webkit-text-fill-color: transparent;">Legendary</span></h1>
+
+                    <!-- add your patreons here by copying and pasting this line, and changing the name -->
+                    <p class="pat-member member-leg"><span class="pat-mem-foreground trans-300">Amma</span></p>
+
+                    <!-- THIS IS THE ADD BUTTON. I DON'T KNOW WHY IT WORKS, BUT THE INSTANT I CHANGE A SINGLE LETTER EVERYTHING BREAKS. DON'T FUCKING TOUCH THIS LINE!!! -->
+                    <a target="_blank" href="https://www.patreon.com/bycloud" style="text-decoration: none;"><p class="pat-member member-leg" style="cursor:pointer;"><span class="pat-mem-foreground trans-300" style="padding: 5pt 7.5pt 5pt 7.5pt; line-height: 0;"><strong>﹢</strong></span></p></a>
+                </section>
+                
+                <!-- ========== EPIC TIER ========== -->
+                <section class="pat-tier-container" style="border-color: #ffffff46;">
+                    <h1 class="pat-tier-title"><span style="background: linear-gradient(70deg, #ff43a7 0%, #ff3ef2 49%, #bb5cff 100%); -webkit-background-clip: text; background-clip:text; -webkit-text-fill-color: transparent;">Epic</span></h1>
+
+                    <!-- add your patreons here by copying and pasting this line, and changing the name -->
+                    <p class="pat-member member-epic"><span class="pat-mem-foreground trans-300">正毅 水野</span></p>
+
+                    <!-- THIS IS THE ADD BUTTON. I DON'T KNOW WHY IT WORKS, BUT THE INSTANT I CHANGE A SINGLE LETTER EVERYTHING BREAKS. DON'T FUCKING TOUCH THIS LINE!!! -->
+                    <a target="_blank" href="https://www.patreon.com/bycloud" style="text-decoration: none;"><p class="pat-member member-epic" style="cursor:pointer;"><span class="pat-mem-foreground trans-300" style="padding: 5pt 7.5pt 5pt 7.5pt; line-height: 0;"><strong>﹢</strong></span></p></a>
+                </section>
+
+                <!-- ========== OFFICIAL TIER ========== -->
+                <section class="pat-tier-container" style="border-color: #ffffff46;">
+                    <h1 class="pat-tier-title"><span style="background: linear-gradient(20deg, #439bff 0%, #3edfff 49%, #5cffd4 100%); -webkit-background-clip: text; background-clip:text; -webkit-text-fill-color: transparent;">Regular</span></h1>
+
+                    <!-- add your patreons here by copying and pasting this line, and changing the name -->
+                    <p class="pat-member member-reg"><span class="pat-mem-foreground trans-300">Panther Modern</span></p>
+                    <p class="pat-member member-reg"><span class="pat-mem-foreground trans-300">Shuhong Chen</span></p>
+                    <p class="pat-member member-reg"><span class="pat-mem-foreground trans-300">Hongbo Men</span></p>
+                    <p class="pat-member member-reg"><span class="pat-mem-foreground trans-300">Tony Jimenez</span></p>
+                    <p class="pat-member member-reg"><span class="pat-mem-foreground trans-300">Demilson Quintao</span></p>
+                    <p class="pat-member member-reg"><span class="pat-mem-foreground trans-300">happy nyuu nyaa</span></p>
+                    <p class="pat-member member-reg"><span class="pat-mem-foreground trans-300">Deagan</span></p>
+                    <p class="pat-member member-reg"><span class="pat-mem-foreground trans-300">Mose Sakashita</span></p>
+                    <p class="pat-member member-reg"><span class="pat-mem-foreground trans-300">Shunsuke Hayashi</span></p>
+                    <p class="pat-member member-reg"><span class="pat-mem-foreground trans-300">Miguel Bandera</span></p>
+                    <p class="pat-member member-reg"><span class="pat-mem-foreground trans-300">Todd</span></p>
+                    <p class="pat-member member-reg"><span class="pat-mem-foreground trans-300">Tono Cabanelas</span></p>
+                    <p class="pat-member member-reg"><span class="pat-mem-foreground trans-300">Bungoss</span></p>
+
+                    <!-- THIS IS THE ADD BUTTON. I DON'T KNOW WHY IT WORKS, BUT THE INSTANT I CHANGE A SINGLE LETTER EVERYTHING BREAKS. DON'T FUCKING TOUCH THIS LINE!!! -->
+                    <a target="_blank" href="https://www.patreon.com/bycloud" style="text-decoration: none;"><p class="pat-member member-reg" style="cursor:pointer;"><span class="pat-mem-foreground trans-300" style="padding: 5pt 7.5pt 5pt 7.5pt; line-height: 0;"><strong>﹢</strong></span></p></a>
+                </section>
+
+            </section>
+
+            <a class="trigger" id="trig-10" style="position:relative; color:white; height:0; width: 0; white-space: nowrap;">Trigger 10 -----</a>
+            <section style="width:100vw; height:100vh; display: flex; flex-direction: column; justify-content: center; align-items: center;">
+                <h1 class="end-page-title" style="width: 100%; text-align:center"> <span class="rainbow-bg" style="-webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent; font-weight: 900;line-height: 120%;">bycloud</span>.ai
+                </h1>
+                <h3 class="end-page-subtitle" style="color: #898989; width: min(70rem, 80%); margin-top: 20pt; text-align: center; font-weight: 400;">
+                    Designed & Made by <a href="https://thelemonorange.com" target="_blank" id="signa-bounce">
+                        <span style="color:#f87800">Lemon</span><span style="color:#ffb700">Orange</span>
+                    </a>
+                </h3>
+                <section id="connections-container" class="cc-center" style="display: flex; margin-top: 30pt; margin-bottom:10pt; width: 100%;">
+                    <a href="https://www.youtube.com/c/bycloudAI" target="_blank" class="connections"><img title="YouTube" class="trans-400" src="./assets/img/vec/youtube-connection.svg" style="width: 28pt; height: auto;" alt="youtube"></a>
+                    <a href="https://www.patreon.com/bycloud" target="_blank" class="connections"><img title="Patreon" class="trans-400" src="./assets/img/vec/patreon-connection.svg" style="width: 28pt; height: auto;" alt="youtube"></a>
+                    <a href="https://www.patreon.com/bycloud" target="_blank" class="connections"><img title="Twitter" class="trans-400" src="./assets/img/vec/twitter-connection.svg" style="width: 28pt; height: auto;" alt="youtube"></a>
+                    <a href="https://github.com/bycloudai" target="_blank" class="connections"><img title="Github" class="trans-400" src="./assets/img/vec/github-connection.svg" style="width: 28pt; height: auto;" alt="youtube"></a>
+                </section>
+            </section>
+
+            <!-- copyright message -->
+            <p id="copyright">Copyright &copy; 2022 BycloudAI <span class="no-mobile-display">| All Rights Reserved</span></p>
         </section>
     </section>
 
+    <script defer data-domain="bycloud.ai" src="https://plausible.io/js/plausible.js"></script>
     <script defer src="./bundle/app.bundle.js"></script>
 </body>
 </html>

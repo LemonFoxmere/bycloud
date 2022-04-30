@@ -55,8 +55,8 @@ const init_ui = async () => {
                 document.getElementById("title-text-container")!.classList.remove("disable-hidden");
             }
         },
-    ])
-    add_trigger_listener("trig-2", "trig-alpha", [ // reveals the page subtitle
+    ]);
+    add_trigger_listener("trig-2", "trig-beta", [ // reveals the page subtitle
         { // show titles
             scroll_past:():void => {
                 document.getElementById("title-theory")!.style.color = "#363636";
@@ -67,7 +67,7 @@ const init_ui = async () => {
                 document.getElementById("title-reality")!.style.color = "#363636";
             }
         },
-    ])
+    ]);
     add_trigger_listener("trig-2", "trig-beta", [ // reveals the video title
         { // show titles
             scroll_past:():void => {
@@ -79,7 +79,7 @@ const init_ui = async () => {
             },
             scroll_back: ():void => {}
         },
-    ])
+    ]);
 
     // title parallax changes
     add_trigger_listener("trig-3", "trig-alpha", [ // update the parallax for vid when scroll up
@@ -96,17 +96,13 @@ const init_ui = async () => {
                 set_element_parallax(4, 0);
             }
         },
-    ])
+    ]);
     add_trigger_listener("trig-4", "trig-beta", [ // stop parallax for vid
         { // show titles
-            scroll_past:():void => {
-                document.getElementById("vid-sec-title-container")!.classList.add("disable-hidden");
-            },
-            scroll_back: ():void => {
-                document.getElementById("vid-sec-title-container")!.classList.remove("disable-hidden");
-            }
+            scroll_past:():void => { document.getElementById("vid-sec-title-container")!.classList.add("disable-hidden"); },
+            scroll_back: ():void => { document.getElementById("vid-sec-title-container")!.classList.remove("disable-hidden"); }
         },
-    ])
+    ]);
 
     add_trigger_listener("trig-6", "trig-alpha", [ // update the parallax for vid when scroll up
         { // show titles
@@ -122,17 +118,48 @@ const init_ui = async () => {
                 set_element_parallax(5, 0);
             }
         },
-    ])
+    ]);
     add_trigger_listener("trig-7", "trig-alpha", [ // stop parallax for vid
         { // show titles
-            scroll_past:():void => {
-                document.getElementById("vid2-sec-title-container")!.classList.add("disable-hidden");
-            },
-            scroll_back: ():void => {
-                document.getElementById("vid2-sec-title-container")!.classList.remove("disable-hidden");
-            }
+            scroll_past:():void => { document.getElementById("vid2-sec-title-container")!.classList.add("disable-hidden"); },
+            scroll_back: ():void => { document.getElementById("vid2-sec-title-container")!.classList.remove("disable-hidden"); }
         },
-    ])
+    ]);
+
+    add_trigger_listener("trig-8", "trig-alpha", [ // hide video section
+        { // show titles
+            scroll_past:():void => {
+                document.getElementById("vid-section")!.classList.add("disable-hidden");
+                document.getElementById("vid-sep-2")!.classList.add("disable-hidden");
+            },
+            scroll_back:():void => {
+                document.getElementById("vid-section")!.classList.remove("disable-hidden");
+                document.getElementById("vid-sep-2")!.classList.remove("disable-hidden");
+            },
+        },
+    ]);
+    add_trigger_listener("trig-9", "trig-alpha", [ // hide host section
+        { // show titles
+            scroll_past:():void => {
+                document.getElementById("host-section")!.classList.add("disable-hidden");
+                document.getElementById("host-sep")!.classList.add("disable-hidden");
+            },
+            scroll_back:():void => {
+                document.getElementById("host-section")!.classList.remove("disable-hidden");
+                document.getElementById("host-sep")!.classList.remove("disable-hidden");
+            },
+        },
+    ]);
+    add_trigger_listener("trig-10", "trig-beta", [ // hide host section
+        { // show titles
+            scroll_past:():void => {
+                document.getElementById("pat-section")!.classList.add("disable-hidden");
+            },
+            scroll_back:():void => {
+                document.getElementById("pat-section")!.classList.remove("disable-hidden");
+            },
+        },
+    ]);
 
     await fadein_background();
     set_flicker("glo1", true, "#b91ad8", Math.random() * 700 + 500);

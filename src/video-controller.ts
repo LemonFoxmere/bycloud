@@ -34,6 +34,7 @@ export const add_video_control_elements = (id:string):void => {
 
     // start adding in event listeners and states
     let paused:boolean = false;
+    let update_visuals:boolean = true;
     
     ctrl.addEventListener("mouseenter", ():void => { // user hover into the button
         ctrl.src = paused ? "./assets/img/vec/play-hr.svg" : "./assets/img/vec/pause-hr.svg"; // change hover image based on state
@@ -43,21 +44,27 @@ export const add_video_control_elements = (id:string):void => {
     });
     ctrl.addEventListener("click", ():void => { // user clicks to pause or play the video
         paused = !paused; // flip state
-        ctrl.src = paused ? "./assets/img/vec/play-hr.svg" : "./assets/img/vec/pause-hr.svg"; // change hoverout image based on state
-        requestAnimationFrame(() => {});
-    
+
+        update_visuals = false;
+
         // actually pause the video
         if(paused) vid_elmnt.pause();
         else vid_elmnt.play();
+
+        ctrl.src = paused ? "./assets/img/vec/play-hr.svg" : "./assets/img/vec/pause-hr.svg"; // change hoverout image based on state
+        requestAnimationFrame(() => {});
+        
+        setTimeout(() => {
+            update_visuals = true;
+        }, 20);
     });
-    vid_elmnt.addEventListener("play", ()=>{
+    
+    vid_elmnt.addEventListener("play", ()=>{ if(!update_visuals) return;
         paused = false;
         ctrl.src = paused ? "./assets/img/vec/play-nm.svg" : "./assets/img/vec/pause-nm.svg"; // change hoverout image based on state
-        requestAnimationFrame(() => {});
     });
-    vid_elmnt.addEventListener("pause", ()=>{
+    vid_elmnt.addEventListener("pause", ()=>{ if(!update_visuals) return;
         paused = true;
         ctrl.src = paused ? "./assets/img/vec/play-nm.svg" : "./assets/img/vec/pause-nm.svg"; // change hoverout image based on state
-        requestAnimationFrame(() => {});
     });
 }

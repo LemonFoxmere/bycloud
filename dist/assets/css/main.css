@@ -23,6 +23,17 @@
     opacity:1 !important;
 }
 
+.rainbow-bg{
+    background-color:#da99ff; background-image:
+    radial-gradient(at 87% 44%, hsla(223,70%,78%,1) 0px, transparent 50%),
+    radial-gradient(at 76% 71%, hsla(260,97%,61%,1) 0px, transparent 50%),
+    radial-gradient(at 90% 10%, hsla(338,78%,60%,1) 0px, transparent 50%),
+    radial-gradient(at 32% 68%, hsla(357,99%,79%,1) 0px, transparent 50%),
+    radial-gradient(at 62% 29%, hsla(284,73%,79%,1) 0px, transparent 50%),
+    radial-gradient(at 35% 23%, hsla(195,91%,76%,1) 0px, transparent 50%),
+    radial-gradient(at 71% 80%, hsla(315,99%,69%,1) 0px, transparent 50%);
+}
+
 /* trigger configuration */
 .trigger{
     -webkit-touch-callout: none;
@@ -51,12 +62,14 @@
     padding: 0 10pt 0 10pt;
 } .cc-left{
     justify-content: center;
+}  .cc-center{
+    justify-content: center !important;
 }
 
 /* videos */
 .video-container{
     display: flex;
-    width:min(67.5rem, 95vw); height: fit-content;
+    width:min(60.5rem, 95vw); height: fit-content;
     display: flex; flex-direction: column;
     justify-content: center;
     
@@ -110,6 +123,70 @@
     cursor:pointer;
 }
 
+/* patreon tiers */
+.pat-tier-container{
+    border: 1px solid white;
+    border-radius: 17pt;
+    display: flex;
+    justify-content: center;
+    width: min(50rem, 90%);
+    margin-top:50pt;
+    padding: 30pt 10pt 20pt 10pt;
+    flex-wrap: wrap;
+} .pat-tier-title{
+    position:absolute;
+    transform: translateY(calc(-60% - 30pt));
+    background-color: #0d0f12;
+    padding: 0 15pt 0 15pt;
+} .god-tier-text-color{
+    background-color:#ff9dcc;
+    background-image:
+    radial-gradient(at 22% 75%, rgb(119, 95, 255) 0px, transparent 50%),
+    radial-gradient(at 30% 27%, rgb(66, 204, 255) 0px, transparent 50%),
+    radial-gradient(at 45% 3%, rgb(113, 255, 53) 0px, transparent 50%),
+    radial-gradient(at 11% 49%, rgb(132, 255, 128) 0px, transparent 50%);
+    -webkit-background-clip: text; background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.pat-member{
+    user-select: none;
+    cursor: default;
+    background-color: #ffffff;
+    color:black;
+    border-radius: 1000rem;
+    margin: 6pt;
+    font-weight: 500;
+    padding: 6.2pt 1.5pt 6.4pt 1.5pt;
+}
+.pat-mem-foreground{
+    padding: 5pt 15pt 5pt 15pt;
+    background-color: #0d0f12;
+    border-radius: inherit;
+    color:white;
+    line-height: 0;
+} @media (hover: hover) {.pat-mem-foreground:hover{
+    background-color: transparent;
+    color:black;
+}}
+
+.member-reg{
+    background: linear-gradient(20deg, #439bff9f 0%, #3edfff9f 49%, #5cffd49f 100%);
+} .member-epic{
+    background: linear-gradient(70deg, #ff43a7bf 0%, #ff3ef2bf 49%, #bb5cffbf 100%);
+} .member-leg{
+    background: linear-gradient(210deg, #ff7c25 0%, #ff9b3e 49%, #ffe45c 100%);
+} .member-god{
+    background-color:#da99ff; background-image:
+    radial-gradient(at 87% 44%, hsla(223,70%,78%,1) 0px, transparent 50%),
+    radial-gradient(at 76% 71%, hsla(260,97%,61%,1) 0px, transparent 50%),
+    radial-gradient(at 90% 10%, hsla(338,78%,60%,1) 0px, transparent 50%),
+    radial-gradient(at 32% 68%, hsla(357,99%,79%,1) 0px, transparent 50%),
+    radial-gradient(at 62% 29%, hsla(284,73%,79%,1) 0px, transparent 50%),
+    radial-gradient(at 35% 23%, hsla(195,91%,76%,1) 0px, transparent 50%),
+    radial-gradient(at 71% 80%, hsla(315,99%,69%,1) 0px, transparent 50%);
+    box-shadow: 0 0 1.5rem #ff88efa3;
+}
 
 
 /* This is just for page & generic styling */
@@ -184,9 +261,6 @@ hr{
         justify-content: flex-start !important;
     }
 
-    body{
-    }
-
     #main-bg{
         transform: none;
         filter: brightness(1);
@@ -207,8 +281,8 @@ hr{
 
     /* videos */
     .video-container{
-        width:min(67.5rem, 90vw);
         aspect-ratio: 640/352;
+        overflow: hidden;
     } .video-descriptions{
         position:absolute;
         width: 40%; height: calc(100% - 1rem);
@@ -221,6 +295,8 @@ hr{
         border: 1px solid #464646;
         box-shadow: 0 0 5rem #000000a9;
     
+        border-radius: 0 1.8rem 1.8rem 0;
+
         border-radius: 0;
     }
     @-moz-document url-prefix() {
@@ -254,9 +330,7 @@ hr{
 /* ====================== LARGE ====================== */
 @media screen and (min-width: 1300px) {
     /* videos */
-    .video-container{
-        width:min(67.5rem, 90vw);
-    } .video-descriptions{
+    .video-descriptions{
         position:absolute;
         width: 40%;
         
