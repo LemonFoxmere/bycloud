@@ -52,13 +52,13 @@
 
 /* connections */
 .connections img:hover{
-    scale: 1.2;
+    transform: scale(1.2);
 } #connections-container{
     justify-content: center;
 } .connections img{
     cursor:pointer;
     scale: 1;
-    transition-property: scale;
+    transition-property: transform;
     padding: 0 10pt 0 10pt;
 } .cc-left{
     justify-content: center;
@@ -157,7 +157,7 @@
     border-radius: 1000rem;
     margin: 6pt;
     font-weight: 500;
-    padding: 6.2pt 1.5pt 6.4pt 1.5pt;
+    padding: 6.75pt 2pt 6.75pt 2pt;
 }
 .pat-mem-foreground{
     padding: 5pt 15pt 5pt 15pt;
