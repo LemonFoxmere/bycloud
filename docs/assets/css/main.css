@@ -285,7 +285,7 @@ hr{
         overflow: hidden;
     } .video-descriptions{
         position:absolute;
-        width: 40%; height: calc(100% - 2.1rem);
+        width: 40%; height: 100%;
         right:0; top:0;
 
         padding: 0.5rem 1.5rem 0.5rem 1.5rem;
