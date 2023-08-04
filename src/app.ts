@@ -184,8 +184,8 @@ window.onload = ():void => {
     }
 
     // load in videos
-    load_video("nerf-video", "./assets/video/v1.mov", "trig-4", "trig-4.1", true);
-    load_video("anime-video", "./assets/video/v2.mov", "trig-5", "trig-5.1", true);
+    load_video("nerf-video", "./assets/video/v2.mov", "trig-4", "trig-4.1", true);
+    load_video("anime-video", "./assets/video/v1.mov", "trig-5", "trig-5.1", true);
     load_video("tutorial-video", "./assets/video/v3.mov", "trig-7", "trig-7.1", true);
     
     // set scroll animations
